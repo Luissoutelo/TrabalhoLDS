@@ -65,7 +65,7 @@ Antes de iniciar, certifique-se de ter as seguintes ferramentas instaladas:
 
 ### Equipe MachineHub:
 
-Luis Soutelo
-João Cruz
-Vasco Almeida
-Carlos Pinto
+- Luis Soutelo
+- João Cruz
+- Vasco Almeida
+- Carlos Pinto
