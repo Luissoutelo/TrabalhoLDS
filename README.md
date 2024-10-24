@@ -41,7 +41,7 @@ O site também oferece um **painel de controle** tanto para administradores quan
 
 O projeto **MachineHub** será desenvolvido com as seguintes tecnologias:
 
-- **Front-end**: HTML5, CSS3, JavaScript
+- **Front-end**: Razor Pages
 - **Back-end**: ASP.NET Core, C#
 - **Banco de Dados**: SQL Server
 - **Mobile**: Flutter (para a versão mobile)
