@@ -5,16 +5,13 @@
 ---
 
 ## Índice
+
 - [Visão Geral](#visão-geral)
 - [Funcionalidades](#funcionalidades)
 - [Tecnologias Utilizadas](#tecnologias-utilizadas)
 - [Instalação e Configuração](#instalação-e-configuração)
-- [Contribuição](#contribuição)
-- [Planejamento do Projeto](#planejamento-do-projeto)
 - [Autores](#autores)
-- [Licença](#licença)
-
----
+- ***
 
 ## Visão Geral
 
@@ -55,6 +52,7 @@ O projeto **MachineHub** será desenvolvido com as seguintes tecnologias:
 ## Instalação e Configuração
 
 ### Pré-requisitos
+
 Antes de iniciar, certifique-se de ter as seguintes ferramentas instaladas:
 
 - [Visual Studio 2022](https://visualstudio.microsoft.com/)
@@ -63,8 +61,10 @@ Antes de iniciar, certifique-se de ter as seguintes ferramentas instaladas:
 - [Docker](https://www.docker.com/) (para rodar o banco de dados localmente)
 - [Flutter](https://flutter.dev/) (para a aplicação mobile)
 
-#Autores
-##Equipe MachineHub:
+## Autores
+
+### Equipe MachineHub:
+
 Luis Soutelo
 João Cruz
 Vasco Almeida
