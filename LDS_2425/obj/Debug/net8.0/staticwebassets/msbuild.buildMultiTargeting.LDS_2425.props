@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\LDS_2425.props" />
+</Project>
