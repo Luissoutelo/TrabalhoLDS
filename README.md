@@ -17,7 +17,7 @@
 
 O **MachineHub** visa facilitar o processo de compra e aluguer de máquinas industriais. Ele oferece uma plataforma onde empresas e indivíduos podem:
 
-- Comprar novas máquinas diretamente no site.
+- Comprar máquinas novas diretamente no site.
 - Alugar máquinas de outros usuários, com a opção de incluir um operador especializado.
 - Sugerir seguros para cobrir possíveis danos durante o período de aluguer.
 
