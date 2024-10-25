@@ -53,8 +53,6 @@ O projeto **MachineHub** será desenvolvido com as seguintes tecnologias:
 
 ### Pré-requisitos
 
-Antes de iniciar, certifique-se de ter as seguintes ferramentas instaladas:
-
 - [Visual Studio 2022](https://visualstudio.microsoft.com/)
 - [.NET Core SDK](https://dotnet.microsoft.com/download)
 - [SQL Server](https://www.microsoft.com/pt-br/sql-server)
