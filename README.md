@@ -33,7 +33,7 @@ O site também oferece um **painel de controle** tanto para administradores quan
 - **Seguros**: Sugestão de seguro para cobrir danos às máquinas durante o período de aluguel.
 - **Carrinho de Compras**: Adicione máquinas ao carrinho, com limitações específicas para itens de aluguel.
 - **Gerenciamento de Contratos**: Geração de contratos automáticos para aluguéis.
-- **Painel Administrativo**: Para gestão de vendas, aluguéis e usuários.
+- **Painel Administrativo**: Para gestão de vendas, e produtos.
 
 ---
 
