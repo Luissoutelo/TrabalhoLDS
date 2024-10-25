@@ -63,7 +63,7 @@ Antes de iniciar, certifique-se de ter as seguintes ferramentas instaladas:
 
 ## Autores
 
-### Equipe MachineHub:
+### Equipa MachineHub:
 
 - Luis Soutelo
 - João Cruz
