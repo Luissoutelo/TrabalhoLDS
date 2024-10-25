@@ -1,0 +1,6 @@
+@LDS_2425_HostAddress = http://localhost:5159
+
+GET {{LDS_2425_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
