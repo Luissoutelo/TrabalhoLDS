@@ -1,0 +1,194 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\joaoc\\source\\repos\\TrabalhoLDS\\LDS_2425\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4C19AC6D-8357-47FE-80B7-CB060FECE3EE}|LDS_2425.csproj|c:\\users\\joaoc\\source\\repos\\trabalholds\\lds_2425\\models\\shoppingcartmachine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C19AC6D-8357-47FE-80B7-CB060FECE3EE}|LDS_2425.csproj|solutionrelative:models\\shoppingcartmachine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C19AC6D-8357-47FE-80B7-CB060FECE3EE}|LDS_2425.csproj|c:\\users\\joaoc\\source\\repos\\trabalholds\\lds_2425\\data\\machinehubcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C19AC6D-8357-47FE-80B7-CB060FECE3EE}|LDS_2425.csproj|solutionrelative:data\\machinehubcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C19AC6D-8357-47FE-80B7-CB060FECE3EE}|LDS_2425.csproj|c:\\users\\joaoc\\source\\repos\\trabalholds\\lds_2425\\models\\shoppingcartloan_listing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C19AC6D-8357-47FE-80B7-CB060FECE3EE}|LDS_2425.csproj|solutionrelative:models\\shoppingcartloan_listing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C19AC6D-8357-47FE-80B7-CB060FECE3EE}|LDS_2425.csproj|c:\\users\\joaoc\\source\\repos\\trabalholds\\lds_2425\\models\\loan_listing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C19AC6D-8357-47FE-80B7-CB060FECE3EE}|LDS_2425.csproj|solutionrelative:models\\loan_listing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C19AC6D-8357-47FE-80B7-CB060FECE3EE}|LDS_2425.csproj|c:\\users\\joaoc\\source\\repos\\trabalholds\\lds_2425\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C19AC6D-8357-47FE-80B7-CB060FECE3EE}|LDS_2425.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C19AC6D-8357-47FE-80B7-CB060FECE3EE}|LDS_2425.csproj|c:\\users\\joaoc\\source\\repos\\trabalholds\\lds_2425\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C19AC6D-8357-47FE-80B7-CB060FECE3EE}|LDS_2425.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C19AC6D-8357-47FE-80B7-CB060FECE3EE}|LDS_2425.csproj|c:\\users\\joaoc\\source\\repos\\trabalholds\\lds_2425\\models\\shoppingcart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C19AC6D-8357-47FE-80B7-CB060FECE3EE}|LDS_2425.csproj|solutionrelative:models\\shoppingcart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C19AC6D-8357-47FE-80B7-CB060FECE3EE}|LDS_2425.csproj|c:\\users\\joaoc\\source\\repos\\trabalholds\\lds_2425\\models\\machine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C19AC6D-8357-47FE-80B7-CB060FECE3EE}|LDS_2425.csproj|solutionrelative:models\\machine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C19AC6D-8357-47FE-80B7-CB060FECE3EE}|LDS_2425.csproj|c:\\users\\joaoc\\source\\repos\\trabalholds\\lds_2425\\models\\contract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C19AC6D-8357-47FE-80B7-CB060FECE3EE}|LDS_2425.csproj|solutionrelative:models\\contract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C19AC6D-8357-47FE-80B7-CB060FECE3EE}|LDS_2425.csproj|c:\\users\\joaoc\\source\\repos\\trabalholds\\lds_2425\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C19AC6D-8357-47FE-80B7-CB060FECE3EE}|LDS_2425.csproj|solutionrelative:models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\joaoc\\source\\repos\\TrabalhoLDS\\LDS_2425\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\joaoc\\source\\repos\\TrabalhoLDS\\LDS_2425\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-26T15:54:28.758Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Contract.cs",
+              "DocumentMoniker": "C:\\Users\\joaoc\\source\\repos\\TrabalhoLDS\\LDS_2425\\Models\\Contract.cs",
+              "RelativeDocumentMoniker": "Models\\Contract.cs",
+              "ToolTip": "C:\\Users\\joaoc\\source\\repos\\TrabalhoLDS\\LDS_2425\\Models\\Contract.cs",
+              "RelativeToolTip": "Models\\Contract.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-26T15:42:38.673Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\joaoc\\source\\repos\\TrabalhoLDS\\LDS_2425\\Models\\User.cs",
+              "RelativeDocumentMoniker": "Models\\User.cs",
+              "ToolTip": "C:\\Users\\joaoc\\source\\repos\\TrabalhoLDS\\LDS_2425\\Models\\User.cs",
+              "RelativeToolTip": "Models\\User.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAA4wBAAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-26T15:35:37.446Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Loan_Listing.cs",
+              "DocumentMoniker": "C:\\Users\\joaoc\\source\\repos\\TrabalhoLDS\\LDS_2425\\Models\\Loan_Listing.cs",
+              "RelativeDocumentMoniker": "Models\\Loan_Listing.cs",
+              "ToolTip": "C:\\Users\\joaoc\\source\\repos\\TrabalhoLDS\\LDS_2425\\Models\\Loan_Listing.cs",
+              "RelativeToolTip": "Models\\Loan_Listing.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-26T15:29:23.618Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MachineHubContext.cs",
+              "DocumentMoniker": "C:\\Users\\joaoc\\source\\repos\\TrabalhoLDS\\LDS_2425\\Data\\MachineHubContext.cs",
+              "RelativeDocumentMoniker": "Data\\MachineHubContext.cs",
+              "ToolTip": "C:\\Users\\joaoc\\source\\repos\\TrabalhoLDS\\LDS_2425\\Data\\MachineHubContext.cs",
+              "RelativeToolTip": "Data\\MachineHubContext.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAgwCcAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-26T15:54:45.881Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ShoppingCartLoan_Listing.cs",
+              "DocumentMoniker": "C:\\Users\\joaoc\\source\\repos\\TrabalhoLDS\\LDS_2425\\Models\\ShoppingCartLoan_Listing.cs",
+              "RelativeDocumentMoniker": "Models\\ShoppingCartLoan_Listing.cs",
+              "ToolTip": "C:\\Users\\joaoc\\source\\repos\\TrabalhoLDS\\LDS_2425\\Models\\ShoppingCartLoan_Listing.cs",
+              "RelativeToolTip": "Models\\ShoppingCartLoan_Listing.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-26T15:52:41.119Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ShoppingCartMachine.cs",
+              "DocumentMoniker": "C:\\Users\\joaoc\\source\\repos\\TrabalhoLDS\\LDS_2425\\Models\\ShoppingCartMachine.cs",
+              "RelativeDocumentMoniker": "Models\\ShoppingCartMachine.cs",
+              "ToolTip": "C:\\Users\\joaoc\\source\\repos\\TrabalhoLDS\\LDS_2425\\Models\\ShoppingCartMachine.cs",
+              "RelativeToolTip": "Models\\ShoppingCartMachine.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-26T15:50:35.522Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ShoppingCart.cs",
+              "DocumentMoniker": "C:\\Users\\joaoc\\source\\repos\\TrabalhoLDS\\LDS_2425\\Models\\ShoppingCart.cs",
+              "RelativeDocumentMoniker": "Models\\ShoppingCart.cs",
+              "ToolTip": "C:\\Users\\joaoc\\source\\repos\\TrabalhoLDS\\LDS_2425\\Models\\ShoppingCart.cs",
+              "RelativeToolTip": "Models\\ShoppingCart.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-26T15:50:08.835Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Machine.cs",
+              "DocumentMoniker": "C:\\Users\\joaoc\\source\\repos\\TrabalhoLDS\\LDS_2425\\Models\\Machine.cs",
+              "RelativeDocumentMoniker": "Models\\Machine.cs",
+              "ToolTip": "C:\\Users\\joaoc\\source\\repos\\TrabalhoLDS\\LDS_2425\\Models\\Machine.cs",
+              "RelativeToolTip": "Models\\Machine.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAA7wBwAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-26T15:23:51.023Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Category.cs",
+              "DocumentMoniker": "C:\\Users\\joaoc\\source\\repos\\TrabalhoLDS\\LDS_2425\\Models\\Category.cs",
+              "RelativeDocumentMoniker": "Models\\Category.cs",
+              "ToolTip": "C:\\Users\\joaoc\\source\\repos\\TrabalhoLDS\\LDS_2425\\Models\\Category.cs",
+              "RelativeToolTip": "Models\\Category.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-26T15:23:14.586Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
