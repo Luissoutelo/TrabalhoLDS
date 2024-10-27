@@ -48,6 +48,6 @@
 
         public ICollection<ShoppingCartLoan_Listing>? ShoppingCarts { get; set; }
 
-        public ICollection<FavoritesPageLoan_Listing>? FavoritesPages { get; set; }
+        public ICollection<Receipt>? Receipts { get; set; }
     }
 }

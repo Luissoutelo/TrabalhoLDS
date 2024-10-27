@@ -29,5 +29,7 @@
         public ICollection<ShoppingCartMachine>? ShoppingCarts { get; set; }
 
         public ICollection<FavoritesPageMachine>? FavoritesPages { get; set; }
+
+        public ICollection<Receipt>? Receipts { get; set; }
     }
 }

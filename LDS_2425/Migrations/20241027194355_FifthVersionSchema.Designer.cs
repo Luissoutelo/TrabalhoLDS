@@ -4,6 +4,7 @@ using LDS_2425.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LDS_2425.Migrations
 {
     [DbContext(typeof(MachineHubContext))]
-    partial class MachineHubContextModelSnapshot : ModelSnapshot
+    [Migration("20241027194355_FifthVersionSchema")]
+    partial class FifthVersionSchema
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -86,26 +89,7 @@ namespace LDS_2425.Migrations
                     b.HasIndex("UserId")
                         .IsUnique();
 
-                    b.ToTable("FavoritesPages");
-                });
-
-            modelBuilder.Entity("LDS_2425.Models.FavoritesPageLoan_Listing", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("FavoritesPageId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Loan_ListingId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("FavoritesPageLoan_Listings");
+                    b.ToTable("FavoritesPage");
                 });
 
             modelBuilder.Entity("LDS_2425.Models.FavoritesPageMachine", b =>
@@ -126,7 +110,7 @@ namespace LDS_2425.Migrations
 
                     b.HasIndex("MachineId");
 
-                    b.ToTable("FavoritesPageMachines");
+                    b.ToTable("FavoritesPageMachine");
                 });
 
             modelBuilder.Entity("LDS_2425.Models.Loan_Listing", b =>
@@ -285,7 +269,13 @@ namespace LDS_2425.Migrations
                     b.Property<int?>("Loan_ListingId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("Loan_ListingId1")
+                        .HasColumnType("int");
+
                     b.Property<int?>("MachineId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("MachineId1")
                         .HasColumnType("int");
 
                     b.Property<int?>("OwnerId")
@@ -298,13 +288,17 @@ namespace LDS_2425.Migrations
 
                     b.HasIndex("Loan_ListingId");
 
+                    b.HasIndex("Loan_ListingId1");
+
                     b.HasIndex("MachineId");
+
+                    b.HasIndex("MachineId1");
 
                     b.HasIndex("OwnerId");
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Receipts");
+                    b.ToTable("Receipt");
                 });
 
             modelBuilder.Entity("LDS_2425.Models.ShoppingCart", b =>
@@ -500,14 +494,22 @@ namespace LDS_2425.Migrations
             modelBuilder.Entity("LDS_2425.Models.Receipt", b =>
                 {
                     b.HasOne("LDS_2425.Models.Loan_Listing", "Loan_Listing")
-                        .WithMany("Receipts")
+                        .WithMany()
                         .HasForeignKey("Loan_ListingId")
                         .OnDelete(DeleteBehavior.Restrict);
 
-                    b.HasOne("LDS_2425.Models.Machine", "Machine")
+                    b.HasOne("LDS_2425.Models.Loan_Listing", null)
                         .WithMany("Receipts")
+                        .HasForeignKey("Loan_ListingId1");
+
+                    b.HasOne("LDS_2425.Models.Machine", "Machine")
+                        .WithMany()
                         .HasForeignKey("MachineId")
                         .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("LDS_2425.Models.Machine", null)
+                        .WithMany("Receipts")
+                        .HasForeignKey("MachineId1");
 
                     b.HasOne("LDS_2425.Models.User", "Owner")
                         .WithMany("ReceiptsOwner")

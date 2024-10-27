@@ -12,9 +12,17 @@ namespace LDS_2425.Data
 
         public DbSet<Contract> Contracts { get; set; }
 
+        public DbSet<FavoritesPage> FavoritesPages { get; set; }
+
+        public DbSet<FavoritesPageLoan_Listing> FavoritesPageLoan_Listings { get; set; }
+
+        public DbSet<FavoritesPageMachine> FavoritesPageMachines { get; set; }
+
         public DbSet<Loan_Listing> Loan_Listings { get; set; }
 
         public DbSet<Machine> Machines { get; set; }
+
+        public DbSet<Receipt> Receipts { get; set; }
 
         public DbSet<ShoppingCart> ShoppingCarts { get; set; }
 
@@ -54,13 +62,13 @@ namespace LDS_2425.Data
 
             modelBuilder.Entity<Receipt>()
                 .HasOne(r => r.Loan_Listing)
-                .WithMany()
+                .WithMany(l => l.Receipts)
                 .HasForeignKey(r => r.Loan_ListingId)
                 .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<Receipt>()
                 .HasOne(r => r.Machine)
-                .WithMany()
+                .WithMany(m => m.Receipts)
                 .HasForeignKey(r => r.MachineId)
                 .OnDelete(DeleteBehavior.Restrict);
 

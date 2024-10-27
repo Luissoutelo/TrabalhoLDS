@@ -4,6 +4,7 @@ using LDS_2425.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LDS_2425.Migrations
 {
     [DbContext(typeof(MachineHubContext))]
-    partial class MachineHubContextModelSnapshot : ModelSnapshot
+    [Migration("20241027194851_SixthVersionSchema")]
+    partial class SixthVersionSchema
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -86,26 +89,7 @@ namespace LDS_2425.Migrations
                     b.HasIndex("UserId")
                         .IsUnique();
 
-                    b.ToTable("FavoritesPages");
-                });
-
-            modelBuilder.Entity("LDS_2425.Models.FavoritesPageLoan_Listing", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("FavoritesPageId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Loan_ListingId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("FavoritesPageLoan_Listings");
+                    b.ToTable("FavoritesPage");
                 });
 
             modelBuilder.Entity("LDS_2425.Models.FavoritesPageMachine", b =>
@@ -126,7 +110,7 @@ namespace LDS_2425.Migrations
 
                     b.HasIndex("MachineId");
 
-                    b.ToTable("FavoritesPageMachines");
+                    b.ToTable("FavoritesPageMachine");
                 });
 
             modelBuilder.Entity("LDS_2425.Models.Loan_Listing", b =>
@@ -304,7 +288,7 @@ namespace LDS_2425.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Receipts");
+                    b.ToTable("Receipt");
                 });
 
             modelBuilder.Entity("LDS_2425.Models.ShoppingCart", b =>

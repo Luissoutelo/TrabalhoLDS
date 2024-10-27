@@ -4,6 +4,7 @@ using LDS_2425.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LDS_2425.Migrations
 {
     [DbContext(typeof(MachineHubContext))]
-    partial class MachineHubContextModelSnapshot : ModelSnapshot
+    [Migration("20241027193853_FouthVersionSchema")]
+    partial class FouthVersionSchema
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -86,7 +89,7 @@ namespace LDS_2425.Migrations
                     b.HasIndex("UserId")
                         .IsUnique();
 
-                    b.ToTable("FavoritesPages");
+                    b.ToTable("FavoritesPage");
                 });
 
             modelBuilder.Entity("LDS_2425.Models.FavoritesPageLoan_Listing", b =>
@@ -105,7 +108,9 @@ namespace LDS_2425.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("FavoritesPageLoan_Listings");
+                    b.HasIndex("Loan_ListingId");
+
+                    b.ToTable("FavoritesPageLoan_Listing");
                 });
 
             modelBuilder.Entity("LDS_2425.Models.FavoritesPageMachine", b =>
@@ -126,7 +131,7 @@ namespace LDS_2425.Migrations
 
                     b.HasIndex("MachineId");
 
-                    b.ToTable("FavoritesPageMachines");
+                    b.ToTable("FavoritesPageMachine");
                 });
 
             modelBuilder.Entity("LDS_2425.Models.Loan_Listing", b =>
@@ -304,7 +309,7 @@ namespace LDS_2425.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Receipts");
+                    b.ToTable("Receipt");
                 });
 
             modelBuilder.Entity("LDS_2425.Models.ShoppingCart", b =>
@@ -450,6 +455,15 @@ namespace LDS_2425.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("LDS_2425.Models.FavoritesPageLoan_Listing", b =>
+                {
+                    b.HasOne("LDS_2425.Models.Loan_Listing", null)
+                        .WithMany("FavoritesPages")
+                        .HasForeignKey("Loan_ListingId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("LDS_2425.Models.FavoritesPageMachine", b =>
                 {
                     b.HasOne("LDS_2425.Models.Machine", null)
@@ -500,12 +514,12 @@ namespace LDS_2425.Migrations
             modelBuilder.Entity("LDS_2425.Models.Receipt", b =>
                 {
                     b.HasOne("LDS_2425.Models.Loan_Listing", "Loan_Listing")
-                        .WithMany("Receipts")
+                        .WithMany()
                         .HasForeignKey("Loan_ListingId")
                         .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("LDS_2425.Models.Machine", "Machine")
-                        .WithMany("Receipts")
+                        .WithMany()
                         .HasForeignKey("MachineId")
                         .OnDelete(DeleteBehavior.Restrict);
 
@@ -596,7 +610,7 @@ namespace LDS_2425.Migrations
                 {
                     b.Navigation("Contracts");
 
-                    b.Navigation("Receipts");
+                    b.Navigation("FavoritesPages");
 
                     b.Navigation("ShoppingCarts");
                 });
@@ -604,8 +618,6 @@ namespace LDS_2425.Migrations
             modelBuilder.Entity("LDS_2425.Models.Machine", b =>
                 {
                     b.Navigation("FavoritesPages");
-
-                    b.Navigation("Receipts");
 
                     b.Navigation("ShoppingCarts");
                 });
