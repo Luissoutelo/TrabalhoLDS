@@ -47,5 +47,7 @@
         public ICollection<Contract>? Contracts { get; set; }
 
         public ICollection<ShoppingCartLoan_Listing>? ShoppingCarts { get; set; }
+
+        public ICollection<FavoritesPageLoan_Listing>? FavoritesPages { get; set; }
     }
 }

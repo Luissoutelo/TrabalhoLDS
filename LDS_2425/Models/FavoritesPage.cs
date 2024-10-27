@@ -1,6 +1,6 @@
 ﻿namespace LDS_2425.Models
 {
-    public class ShoppingCart
+    public class FavoritesPage
     {
         public int Id { get; set; }
 

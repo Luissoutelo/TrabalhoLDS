@@ -17,5 +17,17 @@
         public ICollection<Loan_Listing>? LoanedIn { get; set; }
 
         public ICollection<Loan_Listing>? LoanedOut { get; set; }
+
+        public ICollection<Receipt>? ReceiptsOwner { get; set; }
+
+        public ICollection<Receipt>? ReceiptsUser { get; set; }
+
+        public required ShoppingCart ShoppingCart { get; set; }
+
+        public required int ShoppingCartId { get; set; }
+
+        public required FavoritesPage FavoritesPage { get; set; }
+
+        public required int FavoritesPageId { get; set; }
     }
 }

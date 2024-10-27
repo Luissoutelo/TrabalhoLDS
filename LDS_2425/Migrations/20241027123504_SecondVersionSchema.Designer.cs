@@ -4,6 +4,7 @@ using LDS_2425.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LDS_2425.Migrations
 {
     [DbContext(typeof(MachineHubContext))]
-    partial class MachineHubContextModelSnapshot : ModelSnapshot
+    [Migration("20241027123504_SecondVersionSchema")]
+    partial class SecondVersionSchema
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -68,67 +71,6 @@ namespace LDS_2425.Migrations
                         .IsUnique();
 
                     b.ToTable("Contracts");
-                });
-
-            modelBuilder.Entity("LDS_2425.Models.FavoritesPage", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserId")
-                        .IsUnique();
-
-                    b.ToTable("FavoritesPage");
-                });
-
-            modelBuilder.Entity("LDS_2425.Models.FavoritesPageLoan_Listing", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("FavoritesPageId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Loan_ListingId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("Loan_ListingId");
-
-                    b.ToTable("FavoritesPageLoan_Listing");
-                });
-
-            modelBuilder.Entity("LDS_2425.Models.FavoritesPageMachine", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("FavoritesPageId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("MachineId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("MachineId");
-
-                    b.ToTable("FavoritesPageMachine");
                 });
 
             modelBuilder.Entity("LDS_2425.Models.Loan_Listing", b =>
@@ -336,9 +278,6 @@ namespace LDS_2425.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int?>("FavoritesPageId")
-                        .HasColumnType("int");
-
                     b.Property<int>("Loan_ListingId")
                         .HasColumnType("int");
 
@@ -346,8 +285,6 @@ namespace LDS_2425.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("FavoritesPageId");
 
                     b.HasIndex("Loan_ListingId");
 
@@ -364,9 +301,6 @@ namespace LDS_2425.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int?>("FavoritesPageId")
-                        .HasColumnType("int");
-
                     b.Property<int>("MachineId")
                         .HasColumnType("int");
 
@@ -374,8 +308,6 @@ namespace LDS_2425.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("FavoritesPageId");
 
                     b.HasIndex("MachineId");
 
@@ -395,9 +327,6 @@ namespace LDS_2425.Migrations
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("FavoritesPageId")
-                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -439,35 +368,6 @@ namespace LDS_2425.Migrations
                     b.Navigation("Listing");
 
                     b.Navigation("Receipt");
-                });
-
-            modelBuilder.Entity("LDS_2425.Models.FavoritesPage", b =>
-                {
-                    b.HasOne("LDS_2425.Models.User", "User")
-                        .WithOne("FavoritesPage")
-                        .HasForeignKey("LDS_2425.Models.FavoritesPage", "UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("LDS_2425.Models.FavoritesPageLoan_Listing", b =>
-                {
-                    b.HasOne("LDS_2425.Models.Loan_Listing", null)
-                        .WithMany("FavoritesPages")
-                        .HasForeignKey("Loan_ListingId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("LDS_2425.Models.FavoritesPageMachine", b =>
-                {
-                    b.HasOne("LDS_2425.Models.Machine", null)
-                        .WithMany("FavoritesPages")
-                        .HasForeignKey("MachineId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("LDS_2425.Models.Loan_Listing", b =>
@@ -553,10 +453,6 @@ namespace LDS_2425.Migrations
 
             modelBuilder.Entity("LDS_2425.Models.ShoppingCartLoan_Listing", b =>
                 {
-                    b.HasOne("LDS_2425.Models.FavoritesPage", null)
-                        .WithMany("LoanListings")
-                        .HasForeignKey("FavoritesPageId");
-
                     b.HasOne("LDS_2425.Models.Loan_Listing", null)
                         .WithMany("ShoppingCarts")
                         .HasForeignKey("Loan_ListingId")
@@ -572,10 +468,6 @@ namespace LDS_2425.Migrations
 
             modelBuilder.Entity("LDS_2425.Models.ShoppingCartMachine", b =>
                 {
-                    b.HasOne("LDS_2425.Models.FavoritesPage", null)
-                        .WithMany("Machines")
-                        .HasForeignKey("FavoritesPageId");
-
                     b.HasOne("LDS_2425.Models.Machine", null)
                         .WithMany("ShoppingCarts")
                         .HasForeignKey("MachineId")
@@ -596,26 +488,15 @@ namespace LDS_2425.Migrations
                     b.Navigation("Machines");
                 });
 
-            modelBuilder.Entity("LDS_2425.Models.FavoritesPage", b =>
-                {
-                    b.Navigation("LoanListings");
-
-                    b.Navigation("Machines");
-                });
-
             modelBuilder.Entity("LDS_2425.Models.Loan_Listing", b =>
                 {
                     b.Navigation("Contracts");
-
-                    b.Navigation("FavoritesPages");
 
                     b.Navigation("ShoppingCarts");
                 });
 
             modelBuilder.Entity("LDS_2425.Models.Machine", b =>
                 {
-                    b.Navigation("FavoritesPages");
-
                     b.Navigation("ShoppingCarts");
                 });
 
@@ -633,9 +514,6 @@ namespace LDS_2425.Migrations
 
             modelBuilder.Entity("LDS_2425.Models.User", b =>
                 {
-                    b.Navigation("FavoritesPage")
-                        .IsRequired();
-
                     b.Navigation("LoanedIn");
 
                     b.Navigation("LoanedOut");

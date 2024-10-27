@@ -9,5 +9,9 @@
         public required Loan_Listing Listing { get; set; }
 
         public required int ListingId { get; set; }
+
+        public required Receipt Receipt { get; set; }
+
+        public int ReceiptId { get; set; }
     }
 }

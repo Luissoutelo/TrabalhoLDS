@@ -27,5 +27,7 @@
         public required int CategoryId { get; set; }
 
         public ICollection<ShoppingCartMachine>? ShoppingCarts { get; set; }
+
+        public ICollection<FavoritesPageMachine>? FavoritesPages { get; set; }
     }
 }
