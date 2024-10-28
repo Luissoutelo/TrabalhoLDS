@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LDS_2425")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2095b119219af7c3110d9ff86c91354b266aa164")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9b6b831000d31700e4eb5356509cc0290a332e27")]
 [assembly: System.Reflection.AssemblyProductAttribute("LDS_2425")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LDS_2425")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
