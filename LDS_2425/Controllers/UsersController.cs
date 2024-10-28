@@ -124,5 +124,98 @@ namespace LDS_2425.Controllers
             dbContext.SaveChanges();
             return NoContent();
         }
+
+        // GET : api/users{id}
+        [HttpGet("{id}/purchasesCount")]
+        public ActionResult<int> GetPurchaseCountForUser(int id)
+        {
+            if (dbContext.Users == null)
+            {
+                return NotFound();
+            }
+
+            var purchases = dbContext.Receipts.Count(r => r.UserId == id);
+
+            return Ok(purchases);
+        }
+
+        // GET : api/users{id}
+        [HttpGet("{id}/loanCount")]
+        public ActionResult<int> GetMachinesLoanedCountForUser(int id)
+        {
+            if (dbContext.Users == null)
+            {
+                return NotFound();
+            }
+
+            var loans = dbContext.Receipts.Count(l => l.OwnerId == id);
+
+            return Ok(loans);
+        }
+
+        // GET : api/users{id}
+        [HttpGet("{id}/purchaseReceipts")]
+        public ActionResult<IEnumerable<User>> GetPurchaseReceiptsForUser(int id)
+        {
+            if (dbContext.Users == null)
+            {
+                return NotFound();
+            }
+
+            var receipts = dbContext.Receipts
+                .Where(r => r.UserId == id)
+                .ToList();
+
+            if (receipts == null)
+            {
+                return BadRequest();
+            }
+
+            return Ok(receipts);
+        }
+
+        // GET : api/users{id}
+        [HttpGet("{id}/loanReceipts")]
+        public ActionResult<IEnumerable<User>> GetLoanReceiptsForUser(int id)
+        {
+            if (dbContext.Users == null)
+            {
+                return NotFound();
+            }
+
+            var receipts = dbContext.Receipts
+                .Where(r => r.OwnerId == id)
+                .ToList();
+
+            if (receipts == null)
+            {
+                return BadRequest();
+            }
+
+            return Ok(receipts);
+        }
+
+        /**
+        // GET : api/users{id}
+        [HttpGet("{id}/contracts")]
+        public ActionResult<IEnumerable<User>> GetContractsForUser(int id)
+        {
+            if (dbContext.Users == null)
+            {
+                return NotFound();
+            }
+
+            var contracts = dbContext.Contracts
+                .Where(c => Loan_Listing.GetMachine(c.ListingId).OwnerId == id || Loan_Listing(c.ListingId).UserId == id)
+                .ToList();
+
+            if (contracts == null)
+            {
+                return BadRequest();
+            }
+
+            return Ok(receipts);
+        }
+        */
     }
 }

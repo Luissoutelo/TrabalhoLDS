@@ -32,22 +32,10 @@
 
         public required Boolean TransportNecessary { get; set; }
 
-        public required Category Category { get; set; }
-
         public required int CategoryId { get; set; }
-
-        public required User Owner { get; set; }
 
         public required int OwnerId { get; set; }
 
-        public required User User { get; set; }
-
         public required int UserId { get; set; }
-
-        public ICollection<Contract>? Contracts { get; set; }
-
-        public ICollection<ShoppingCartLoan_Listing>? ShoppingCarts { get; set; }
-
-        public ICollection<Receipt>? Receipts { get; set; }
     }
 }
