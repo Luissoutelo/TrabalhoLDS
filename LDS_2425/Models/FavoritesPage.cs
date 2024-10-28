@@ -8,8 +8,6 @@
 
         public ICollection<ShoppingCartLoan_Listing>? LoanListings { get; set; }
 
-        public required User User { get; set; }
-
         public required int UserId { get; set; }
     }
 }

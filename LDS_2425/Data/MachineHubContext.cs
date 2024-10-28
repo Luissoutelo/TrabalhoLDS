@@ -32,63 +32,6 @@ namespace LDS_2425.Data
 
         public DbSet<User> Users { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            // Listagem
-            modelBuilder.Entity<Loan_Listing>()
-                .HasOne(l => l.Owner)
-                .WithMany(u => u.LoanedIn)
-                .HasForeignKey(l => l.OwnerId)
-                .OnDelete(DeleteBehavior.Restrict); //Para não apagar listagens se apagarmos o perfil
-
-            modelBuilder.Entity<Loan_Listing>()
-                .HasOne(l => l.User)
-                .WithMany(u => u.LoanedOut)
-                .HasForeignKey(l => l.UserId)
-                .OnDelete(DeleteBehavior.Restrict);
-
-            //Recibo
-            modelBuilder.Entity<Receipt>()
-                .HasOne(r => r.Owner)
-                .WithMany(u => u.ReceiptsOwner)
-                .HasForeignKey(r => r.OwnerId)
-                .OnDelete(DeleteBehavior.Restrict);
-
-            modelBuilder.Entity<Receipt>()
-                .HasOne(r => r.User)
-                .WithMany(u => u.ReceiptsUser)
-                .HasForeignKey(r => r.UserId)
-                .OnDelete(DeleteBehavior.Restrict);
-
-            modelBuilder.Entity<Receipt>()
-                .HasOne(r => r.Loan_Listing)
-                .WithMany(l => l.Receipts)
-                .HasForeignKey(r => r.Loan_ListingId)
-                .OnDelete(DeleteBehavior.Restrict);
-
-            modelBuilder.Entity<Receipt>()
-                .HasOne(r => r.Machine)
-                .WithMany(m => m.Receipts)
-                .HasForeignKey(r => r.MachineId)
-                .OnDelete(DeleteBehavior.Restrict);
-
-            modelBuilder.Entity<Receipt>()
-                .HasOne(r => r.Contract)
-                .WithOne(c => c.Receipt)
-                .HasForeignKey<Contract>(c => c.ReceiptId); // Contrato é dependente de Receipt
-
-            // User
-            modelBuilder.Entity<User>()
-                .HasOne(u => u.ShoppingCart)
-                .WithOne(s => s.User)
-                .HasForeignKey<ShoppingCart>(u => u.UserId); // Carrinho é dependente do utilizador
-
-            modelBuilder.Entity<User>()
-                .HasOne(u => u.FavoritesPage)
-                .WithOne(f => f.User)
-                .HasForeignKey<FavoritesPage>(u => u.UserId); // Favoritos é dependente do utilizador
-        }
-
         public bool ValidateReceipt(Receipt receipt)
         {
             if (!(receipt.Loan_ListingId.HasValue ^ receipt.MachineId.HasValue))

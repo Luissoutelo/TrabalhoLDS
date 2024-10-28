@@ -22,14 +22,6 @@
 
         public required string Image {  get; set; }
 
-        public required Category Category { get; set; }
-
         public required int CategoryId { get; set; }
-
-        public ICollection<ShoppingCartMachine>? ShoppingCarts { get; set; }
-
-        public ICollection<FavoritesPageMachine>? FavoritesPages { get; set; }
-
-        public ICollection<Receipt>? Receipts { get; set; }
     }
 }

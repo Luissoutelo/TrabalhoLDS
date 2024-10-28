@@ -4,6 +4,7 @@ using LDS_2425.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LDS_2425.Migrations
 {
     [DbContext(typeof(MachineHubContext))]
-    partial class MachineHubContextModelSnapshot : ModelSnapshot
+    [Migration("20241028165532_DBTest2")]
+    partial class DBTest2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -227,9 +230,6 @@ namespace LDS_2425.Migrations
 
                     b.Property<float>("Price")
                         .HasColumnType("real");
-
-                    b.Property<DateOnly>("Year_of_Manufacture")
-                        .HasColumnType("date");
 
                     b.HasKey("Id");
 
