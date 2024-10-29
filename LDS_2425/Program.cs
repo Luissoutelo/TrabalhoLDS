@@ -1,4 +1,6 @@
+using LDS_2425;
 using LDS_2425.Data;
+using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +15,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddSingleton<TokenGenerator>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -21,6 +25,14 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.MapPost("/login", (LoginRequest request, TokenGenerator tokenGenerator) =>
+{
+    return new
+    {
+        acess_token = tokenGenerator.GenerateToken(request.Email)
+    };
+});
 
 app.UseHttpsRedirection();
 
