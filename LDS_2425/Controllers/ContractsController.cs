@@ -15,12 +15,13 @@ namespace LDS_2425.Controllers
 
 		public ContractsController(MachineHubContext dbContext) => this.dbContext = dbContext;
 
+
 		//GET: api/Contracts
 		[HttpGet]
 		public ActionResult<IEnumerable<Contract>> GetContracts()
 		{
 			if (dbContext.Contracts == null)
-				return NotFound();
+				return NotFound("No contracts found");
 
 			return Ok(dbContext.Contracts.ToList());
 		}
@@ -37,7 +38,7 @@ namespace LDS_2425.Controllers
 			var contract = dbContext.Contracts.SingleOrDefault(s => s.Id == id);
 
 			if (contract == null)
-				return NotFound();
+				return NotFound($"Contract with ID {id} not found.");
 
 			return Ok(contract);
 		}
@@ -52,24 +53,40 @@ namespace LDS_2425.Controllers
 				return BadRequest("Contrato nao pode ser nulo.");
             }
 
+			////Validadte ListingId and ReceipId existence
+			//if (!dbContext.Loan_Listings.Any(1 => 1.Id == contract.ListingId) ||
+   //             (!dbContext.Receipts.Any(r => r.Id == contract.ReceiptId))
+			//	{
+			//	return BadRequest("Listing or Receipt ID invalid");
+			//}
+
+   //         // Check if receipt validation passes
+   //         if (!dbContext.ValidateReceipt(contract.Receipt))
+   //         {
+   //             return BadRequest("Receipt does not meet the validation requirements.");
+   //         }
+
             dbContext.Contracts.Add(contract);
 			dbContext.SaveChanges();
 			return CreatedAtAction(nameof(Add), new { id = contract.Id }, contract);
 		}
 
-		//Put: api/contracts
+		//Put: api/contracts/{id}
 		[HttpPut("{id}")]
 		public IActionResult Update(int id, Contract contract)
 		{
 			if (!contract.Id.Equals(id))
-				return BadRequest();
+				return BadRequest("Contract ID mismatch or null data.");
 
-			dbContext.Contracts.Entry(contract).State = EntityState.Modified;
+			if (!dbContext.Contracts.Any(c => c.Id == id))
+				return NotFound($"Contract with ID {id} not found.");
+
+			dbContext.Contracts.Update(contract);
 			dbContext.SaveChanges();
 			return NoContent();
 		}
 
-		//Delete: api/students
+		//Delete: api/students/{id}
 		[HttpDelete("{id}")]
 		public IActionResult Delete(int id)
 		{
@@ -79,7 +96,7 @@ namespace LDS_2425.Controllers
 			var contract = dbContext.Contracts.SingleOrDefault(s => s.Id == id);
 
 			if (contract == null)
-				return NotFound();
+				return NotFound($"Contract with ID {id} not found");
 
 			dbContext.Contracts.Remove(contract);
 			dbContext.SaveChanges();

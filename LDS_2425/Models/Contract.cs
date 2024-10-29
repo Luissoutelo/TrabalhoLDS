@@ -6,11 +6,11 @@
 
         public required string Description { get; set; }
 
-        public required Loan_Listing Listing { get; set; }
+        public  Loan_Listing Listing { get; set; }
 
-        public required int ListingId { get; set; }
+        public  int ListingId { get; set; }
 
-        public required Receipt Receipt { get; set; }
+        public  Receipt Receipt { get; set; }
 
         public int ReceiptId { get; set; }
     }

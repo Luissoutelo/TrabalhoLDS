@@ -5,12 +5,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace LDS_2425.Controllers
 {
-    public class ReceiptsController : Controller
+    [Route("api/[controller]")]
+    [ApiController]
+    public class ReceiptsController : ControllerBase
     {
-        public IActionResult Index()
-        {
-            return View();
-        }
 
         private readonly MachineHubContext dbContext;
 
@@ -53,12 +51,26 @@ namespace LDS_2425.Controllers
                 return BadRequest("Contrato nao pode ser nulo.");
             }
 
+            //// Validações adicionais para propriedades obrigatórias
+            //if (string.IsNullOrEmpty(receipt.CompanyName) ||
+            //    string.IsNullOrEmpty(receipt.CompanyEmail) ||
+            //    receipt.DateReceipt == default)
+            //{
+            //    return BadRequest("Campos obrigatórios estão ausentes.");
+            //}
+
+            //// Validação da estrutura do recibo conforme seu contexto
+            //if (!(receipt.Loan_ListingId.HasValue ^ receipt.MachineId.HasValue))
+            //{
+            //    return BadRequest("O recibo deve estar associado a um aluguel ou uma máquina específica, não ambos.");
+            //}
+
             dbContext.Receipts.Add(receipt);
             dbContext.SaveChanges();
             return CreatedAtAction(nameof(Add), new { id = receipt.Id }, receipt);
         }
 
-        //Put: api/Receipts
+        //Put: api/Receipts/{id}
         [HttpPut("{id}")]
         public IActionResult Update(int id, Receipt receipt)
         {
@@ -70,7 +82,7 @@ namespace LDS_2425.Controllers
             return NoContent();
         }
 
-        //Delete: api/students
+        //Delete: api/students/{id}
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
