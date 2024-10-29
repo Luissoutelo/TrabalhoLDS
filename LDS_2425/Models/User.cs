@@ -8,14 +8,10 @@
 
         public required string Email { get; set; }
 
-        public required string Password { get; set; }
+        public required string PasswordHash { get; set; }
 
         public required int PhoneNumber { get; set; }
 
         public required string type { get; set; }
-
-        public required int ShoppingCartId { get; set; }
-
-        public required int FavoritesPageId { get; set; }
     }
 }
