@@ -327,6 +327,11 @@
         "Name": "user",
         "Type": "LDS_2425.Models.User",
         "IsRequired": true
+      },
+      {
+        "Name": "password",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": [
@@ -509,27 +514,19 @@
     ]
   },
   {
-    "ContainingType": "Program\u002B\u003C\u003Ec",
-    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_4",
-    "RelativePath": "login",
+    "ContainingType": "LDS_2425.Controllers.UsersController",
+    "Method": "Login",
+    "RelativePath": "api/Users/login",
     "HttpMethod": "POST",
-    "IsController": false,
+    "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "request",
-        "Type": "Microsoft.AspNetCore.Identity.Data.LoginRequest",
+        "Name": "loginRequest",
+        "Type": "LDS_2425.LoginRequest",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "\u003C\u003Ef__AnonymousType14\u00601[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "MediaTypes": [
-          "application/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   }
 ]

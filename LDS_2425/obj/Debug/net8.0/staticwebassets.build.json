@@ -1,11 +1,39 @@
 {
   "Version": 1,
-  "Hash": "vRnXMojC2Ck3fojSHtkP3vMnEB/lGaVyaIVS1Oc/atg=",
+  "Hash": "iYTRwBQQ3W9WdneKZ/SI5miD1BOdSR0LDByjvZWLvOQ=",
   "Source": "LDS_2425",
   "BasePath": "_content/LDS_2425",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "LDS_2425\\wwwroot",
+      "Source": "LDS_2425",
+      "ContentRoot": "C:\\Users\\joaoc\\Source\\Repos\\TrabalhoLDS\\LDS_2425\\wwwroot\\",
+      "BasePath": "_content/LDS_2425",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\joaoc\\Source\\Repos\\TrabalhoLDS\\LDS_2425\\wwwroot\\swagger-ui-token.js",
+      "SourceId": "LDS_2425",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\joaoc\\Source\\Repos\\TrabalhoLDS\\LDS_2425\\wwwroot\\",
+      "BasePath": "_content/LDS_2425",
+      "RelativePath": "swagger-ui-token.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\swagger-ui-token.js"
+    }
+  ]
 }

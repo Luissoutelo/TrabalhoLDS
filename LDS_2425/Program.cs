@@ -1,10 +1,14 @@
 using LDS_2425;
+using LDS_2425.Controllers;
 using LDS_2425.Data;
+using LDS_2425.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +19,29 @@ builder.Services.AddDbContext<MachineHubContext>(options =>
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAllOrigins",
+        builder =>
+        {
+            builder.AllowAnyOrigin()
+                   .AllowAnyMethod()
+                   .AllowAnyHeader();
+        });
+
+    options.AddPolicy("AllowLocalhost", policy =>
+    {
+        policy.WithOrigins("https://localhost:7174/")
+              .AllowAnyHeader()
+              .AllowAnyMethod()
+              .AllowCredentials();
+    });
+});
+
+builder.Services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
+builder.Services.AddScoped<UsersController>();
+
 builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddSwaggerGen(c =>
@@ -47,13 +74,12 @@ builder.Services.AddSwaggerGen(c =>
         });
 });
 
-builder.Services.AddAuthorization();
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(x =>
     {
         x.TokenValidationParameters = new TokenValidationParameters
         {
-            IssuerSigningKey = new SymmetricSecurityKey("your-longer-super-secret-key-123456789"u8.ToArray()),
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("your-longer-super-secret-key-123456789")),
             ValidIssuer = "https://localhost:7174/", 
             ValidAudience = "https://localhost:7174/",
             ValidateIssuerSigningKey = true,
@@ -62,6 +88,8 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ValidateAudience = true,
         };
     });
+
+builder.Services.AddAuthorization();
 
 builder.Services.AddSingleton<TokenGenerator>();
 
@@ -77,16 +105,21 @@ if (app.Environment.IsDevelopment())
     });
 }
 
+app.UseCors("AllowAllOrigins");
+app.UseCors("AllowLocalhost");
+
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.MapPost("/login", (LoginRequest request, TokenGenerator tokenGenerator) =>
+/**
+app.MapPost("/login", (Microsoft.AspNetCore.Identity.Data.LoginRequest request, TokenGenerator tokenGenerator) =>
 {
     return new
     {
         acess_token = tokenGenerator.GenerateToken(request.Email)
     };
 });
+*/
 
 app.UseHttpsRedirection();
 

@@ -14,11 +14,28 @@ namespace LDS_2425.Controllers
     {
         private readonly MachineHubContext dbContext;
         private readonly IPasswordHasher<User> passwordHasher;
+        private readonly TokenGenerator tokenGenerator;
 
-        public UsersController(MachineHubContext dbContext, IPasswordHasher<User> passwordHasher)
+        public UsersController(MachineHubContext dbContext, IPasswordHasher<User> passwordHasher, TokenGenerator tokenGenerator)
         {
             this.dbContext = dbContext;
             this.passwordHasher = passwordHasher;
+            this.tokenGenerator = tokenGenerator;
+        }
+
+        [HttpPost("login")]
+        public IActionResult Login([FromBody] LoginRequest loginRequest)
+        {
+            var isValidUser = dbContext.ValidateUserCredentials(loginRequest);
+
+            if (!isValidUser)
+            {
+                return Unauthorized("Invalid email or password.");
+            }
+
+            // Generate token if credentials are valid
+            var token = tokenGenerator.GenerateToken(loginRequest.Email);
+            return Ok(new { Token = token });
         }
 
         // GET : api/users

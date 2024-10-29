@@ -1,12 +1,17 @@
 ﻿using LDS_2425.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace LDS_2425.Data
 {
     public class MachineHubContext : DbContext
     {
-        public MachineHubContext(DbContextOptions<MachineHubContext> options) : base(options)
-        { }
+        private readonly IPasswordHasher<User> passwordHasher;
+        public MachineHubContext(DbContextOptions<MachineHubContext> options, IPasswordHasher<User> passwordHasher) 
+            : base(options)
+        {
+            this.passwordHasher = passwordHasher;
+        }
 
         public DbSet<Category> Categories { get; set; }
 
@@ -47,6 +52,17 @@ namespace LDS_2425.Data
 
             // Passa se for venda de máquina ou se for listagem com contrato
             return true;
+        }
+
+        //Método para verificar dados para criar token
+        public bool ValidateUserCredentials(LoginRequest loginRequest)
+        {
+            var user = Users.SingleOrDefault(u => u.Email == loginRequest.Email);
+            if (user == null) return false;
+
+            var passwordVerificationResult = passwordHasher.VerifyHashedPassword(user, user.PasswordHash, loginRequest.Password);
+
+            return passwordVerificationResult == PasswordVerificationResult.Success;
         }
     }
 }
