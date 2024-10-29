@@ -1,5 +1,4878 @@
 [
   {
+    "ContainingType": "LDS_2425.Controllers.ReceiptsController",
+    "Method": "GetReceipts",
+    "RelativePath": "{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "LDS_2425.Models.Receipt",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "LDS_2425.Controllers.ReceiptsController",
+    "Method": "Update",
+    "RelativePath": "{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "CompanyName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "CompanyEmail",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "CompanyPhone",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "CompanyNif",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "DateReceipt",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.Password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.PhoneNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.LoanedIn",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.LoanedOut",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.ReceiptsOwner",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.ReceiptsUser",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.ShoppingCart.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.ShoppingCart.Machines",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartMachine, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.ShoppingCart.LoanListings",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartLoan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.ShoppingCart.User.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.ShoppingCart.User.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.ShoppingCart.User.Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.ShoppingCart.User.Password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.ShoppingCart.User.PhoneNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.ShoppingCart.User.type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.ShoppingCart.User.LoanedIn",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.ShoppingCart.User.LoanedOut",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.ShoppingCart.User.ReceiptsOwner",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.ShoppingCart.User.ReceiptsUser",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.ShoppingCart.User.ShoppingCart",
+        "Type": "LDS_2425.Models.ShoppingCart",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.ShoppingCart.User.ShoppingCartId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.ShoppingCart.User.FavoritesPage.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.ShoppingCart.User.FavoritesPage.Machines",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartMachine, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.ShoppingCart.User.FavoritesPage.LoanListings",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartLoan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.ShoppingCart.User.FavoritesPage.User.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.ShoppingCart.User.FavoritesPage.User.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.ShoppingCart.User.FavoritesPage.User.Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.ShoppingCart.User.FavoritesPage.User.Password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.ShoppingCart.User.FavoritesPage.User.PhoneNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.ShoppingCart.User.FavoritesPage.User.type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.ShoppingCart.User.FavoritesPage.User.LoanedIn",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.ShoppingCart.User.FavoritesPage.User.LoanedOut",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.ShoppingCart.User.FavoritesPage.User.ReceiptsOwner",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.ShoppingCart.User.FavoritesPage.User.ReceiptsUser",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.ShoppingCart.User.FavoritesPage.User.ShoppingCart",
+        "Type": "LDS_2425.Models.ShoppingCart",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.ShoppingCart.User.FavoritesPage.User.ShoppingCartId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.ShoppingCart.User.FavoritesPage.User.FavoritesPage",
+        "Type": "LDS_2425.Models.FavoritesPage",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.ShoppingCart.User.FavoritesPage.User.FavoritesPageId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.ShoppingCart.User.FavoritesPage.UserId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.ShoppingCart.User.FavoritesPageId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.ShoppingCart.UserId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.ShoppingCartId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.FavoritesPage.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.FavoritesPage.Machines",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartMachine, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.FavoritesPage.LoanListings",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartLoan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.FavoritesPage.User.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.FavoritesPage.User.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.FavoritesPage.User.Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.FavoritesPage.User.Password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.FavoritesPage.User.PhoneNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.FavoritesPage.User.type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.FavoritesPage.User.LoanedIn",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.FavoritesPage.User.LoanedOut",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.FavoritesPage.User.ReceiptsOwner",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.FavoritesPage.User.ReceiptsUser",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.FavoritesPage.User.ShoppingCart.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.FavoritesPage.User.ShoppingCart.Machines",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartMachine, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.FavoritesPage.User.ShoppingCart.LoanListings",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartLoan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.FavoritesPage.User.ShoppingCart.User.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.FavoritesPage.User.ShoppingCart.User.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.FavoritesPage.User.ShoppingCart.User.Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.FavoritesPage.User.ShoppingCart.User.Password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.FavoritesPage.User.ShoppingCart.User.PhoneNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.FavoritesPage.User.ShoppingCart.User.type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.FavoritesPage.User.ShoppingCart.User.LoanedIn",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.FavoritesPage.User.ShoppingCart.User.LoanedOut",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.FavoritesPage.User.ShoppingCart.User.ReceiptsOwner",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.FavoritesPage.User.ShoppingCart.User.ReceiptsUser",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.FavoritesPage.User.ShoppingCart.User.ShoppingCart",
+        "Type": "LDS_2425.Models.ShoppingCart",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.FavoritesPage.User.ShoppingCart.User.ShoppingCartId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.FavoritesPage.User.ShoppingCart.User.FavoritesPage",
+        "Type": "LDS_2425.Models.FavoritesPage",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.FavoritesPage.User.ShoppingCart.User.FavoritesPageId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.FavoritesPage.User.ShoppingCart.UserId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.FavoritesPage.User.ShoppingCartId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.FavoritesPage.User.FavoritesPage",
+        "Type": "LDS_2425.Models.FavoritesPage",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.FavoritesPage.User.FavoritesPageId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.FavoritesPage.UserId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Owner.FavoritesPageId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "OwnerId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.Password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.PhoneNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.LoanedIn",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.LoanedOut",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.ReceiptsOwner",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.ReceiptsUser",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.ShoppingCart.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.ShoppingCart.Machines",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartMachine, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.ShoppingCart.LoanListings",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartLoan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.ShoppingCart.User.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.ShoppingCart.User.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.ShoppingCart.User.Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.ShoppingCart.User.Password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.ShoppingCart.User.PhoneNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.ShoppingCart.User.type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.ShoppingCart.User.LoanedIn",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.ShoppingCart.User.LoanedOut",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.ShoppingCart.User.ReceiptsOwner",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.ShoppingCart.User.ReceiptsUser",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.ShoppingCart.User.ShoppingCart",
+        "Type": "LDS_2425.Models.ShoppingCart",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.ShoppingCart.User.ShoppingCartId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.ShoppingCart.User.FavoritesPage.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.ShoppingCart.User.FavoritesPage.Machines",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartMachine, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.ShoppingCart.User.FavoritesPage.LoanListings",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartLoan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.ShoppingCart.User.FavoritesPage.User.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.ShoppingCart.User.FavoritesPage.User.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.ShoppingCart.User.FavoritesPage.User.Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.ShoppingCart.User.FavoritesPage.User.Password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.ShoppingCart.User.FavoritesPage.User.PhoneNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.ShoppingCart.User.FavoritesPage.User.type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.ShoppingCart.User.FavoritesPage.User.LoanedIn",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.ShoppingCart.User.FavoritesPage.User.LoanedOut",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.ShoppingCart.User.FavoritesPage.User.ReceiptsOwner",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.ShoppingCart.User.FavoritesPage.User.ReceiptsUser",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.ShoppingCart.User.FavoritesPage.User.ShoppingCart",
+        "Type": "LDS_2425.Models.ShoppingCart",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.ShoppingCart.User.FavoritesPage.User.ShoppingCartId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.ShoppingCart.User.FavoritesPage.User.FavoritesPage",
+        "Type": "LDS_2425.Models.FavoritesPage",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.ShoppingCart.User.FavoritesPage.User.FavoritesPageId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.ShoppingCart.User.FavoritesPage.UserId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.ShoppingCart.User.FavoritesPageId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.ShoppingCart.UserId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.ShoppingCartId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.FavoritesPage.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.FavoritesPage.Machines",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartMachine, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.FavoritesPage.LoanListings",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartLoan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.FavoritesPage.User.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.FavoritesPage.User.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.FavoritesPage.User.Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.FavoritesPage.User.Password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.FavoritesPage.User.PhoneNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.FavoritesPage.User.type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.FavoritesPage.User.LoanedIn",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.FavoritesPage.User.LoanedOut",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.FavoritesPage.User.ReceiptsOwner",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.FavoritesPage.User.ReceiptsUser",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.FavoritesPage.User.ShoppingCart.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.FavoritesPage.User.ShoppingCart.Machines",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartMachine, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.FavoritesPage.User.ShoppingCart.LoanListings",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartLoan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.FavoritesPage.User.ShoppingCart.User.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.FavoritesPage.User.ShoppingCart.User.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.FavoritesPage.User.ShoppingCart.User.Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.FavoritesPage.User.ShoppingCart.User.Password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.FavoritesPage.User.ShoppingCart.User.PhoneNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.FavoritesPage.User.ShoppingCart.User.type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.FavoritesPage.User.ShoppingCart.User.LoanedIn",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.FavoritesPage.User.ShoppingCart.User.LoanedOut",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.FavoritesPage.User.ShoppingCart.User.ReceiptsOwner",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.FavoritesPage.User.ShoppingCart.User.ReceiptsUser",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.FavoritesPage.User.ShoppingCart.User.ShoppingCart",
+        "Type": "LDS_2425.Models.ShoppingCart",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.FavoritesPage.User.ShoppingCart.User.ShoppingCartId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.FavoritesPage.User.ShoppingCart.User.FavoritesPage",
+        "Type": "LDS_2425.Models.FavoritesPage",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.FavoritesPage.User.ShoppingCart.User.FavoritesPageId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.FavoritesPage.User.ShoppingCart.UserId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.FavoritesPage.User.ShoppingCartId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.FavoritesPage.User.FavoritesPage",
+        "Type": "LDS_2425.Models.FavoritesPage",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.FavoritesPage.User.FavoritesPageId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.FavoritesPage.UserId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "User.FavoritesPageId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "UserId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Brand",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Model",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Condition",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Capacity",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Description",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.YearManufacture",
+        "Type": "System.DateOnly",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Price",
+        "Type": "System.Single",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Image",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.DateListed",
+        "Type": "System.DateOnly",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.StartDate",
+        "Type": "System.DateOnly",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.EndDate",
+        "Type": "System.DateOnly",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.WorkerAvailable",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.TransportNecessary",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Category.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Category.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Category.Description",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Category.Machines",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Machine, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Category.LoanListings",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.CategoryId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.Password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.PhoneNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.LoanedIn",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.LoanedOut",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.ReceiptsOwner",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.ReceiptsUser",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.ShoppingCart.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.ShoppingCart.Machines",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartMachine, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.ShoppingCart.LoanListings",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartLoan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.ShoppingCart.User.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.ShoppingCart.User.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.ShoppingCart.User.Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.ShoppingCart.User.Password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.ShoppingCart.User.PhoneNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.ShoppingCart.User.type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.ShoppingCart.User.LoanedIn",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.ShoppingCart.User.LoanedOut",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.ShoppingCart.User.ReceiptsOwner",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.ShoppingCart.User.ReceiptsUser",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.ShoppingCart.User.ShoppingCart",
+        "Type": "LDS_2425.Models.ShoppingCart",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.ShoppingCart.User.ShoppingCartId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.ShoppingCart.User.FavoritesPage.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.ShoppingCart.User.FavoritesPage.Machines",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartMachine, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.ShoppingCart.User.FavoritesPage.LoanListings",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartLoan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.ShoppingCart.User.FavoritesPage.User.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.ShoppingCart.User.FavoritesPage.User.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.ShoppingCart.User.FavoritesPage.User.Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.ShoppingCart.User.FavoritesPage.User.Password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.ShoppingCart.User.FavoritesPage.User.PhoneNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.ShoppingCart.User.FavoritesPage.User.type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.ShoppingCart.User.FavoritesPage.User.LoanedIn",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.ShoppingCart.User.FavoritesPage.User.LoanedOut",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.ShoppingCart.User.FavoritesPage.User.ReceiptsOwner",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.ShoppingCart.User.FavoritesPage.User.ReceiptsUser",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.ShoppingCart.User.FavoritesPage.User.ShoppingCart",
+        "Type": "LDS_2425.Models.ShoppingCart",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.ShoppingCart.User.FavoritesPage.User.ShoppingCartId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.ShoppingCart.User.FavoritesPage.User.FavoritesPage",
+        "Type": "LDS_2425.Models.FavoritesPage",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.ShoppingCart.User.FavoritesPage.User.FavoritesPageId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.ShoppingCart.User.FavoritesPage.UserId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.ShoppingCart.User.FavoritesPageId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.ShoppingCart.UserId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.ShoppingCartId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.FavoritesPage.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.FavoritesPage.Machines",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartMachine, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.FavoritesPage.LoanListings",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartLoan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.FavoritesPage.User.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.FavoritesPage.User.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.FavoritesPage.User.Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.FavoritesPage.User.Password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.FavoritesPage.User.PhoneNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.FavoritesPage.User.type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.FavoritesPage.User.LoanedIn",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.FavoritesPage.User.LoanedOut",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.FavoritesPage.User.ReceiptsOwner",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.FavoritesPage.User.ReceiptsUser",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.FavoritesPage.User.ShoppingCart.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.FavoritesPage.User.ShoppingCart.Machines",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartMachine, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.FavoritesPage.User.ShoppingCart.LoanListings",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartLoan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.FavoritesPage.User.ShoppingCart.User.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.FavoritesPage.User.ShoppingCart.User.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.FavoritesPage.User.ShoppingCart.User.Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.FavoritesPage.User.ShoppingCart.User.Password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.FavoritesPage.User.ShoppingCart.User.PhoneNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.FavoritesPage.User.ShoppingCart.User.type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.FavoritesPage.User.ShoppingCart.User.LoanedIn",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.FavoritesPage.User.ShoppingCart.User.LoanedOut",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.FavoritesPage.User.ShoppingCart.User.ReceiptsOwner",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.FavoritesPage.User.ShoppingCart.User.ReceiptsUser",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.FavoritesPage.User.ShoppingCart.User.ShoppingCart",
+        "Type": "LDS_2425.Models.ShoppingCart",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.FavoritesPage.User.ShoppingCart.User.ShoppingCartId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.FavoritesPage.User.ShoppingCart.User.FavoritesPage",
+        "Type": "LDS_2425.Models.FavoritesPage",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.FavoritesPage.User.ShoppingCart.User.FavoritesPageId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.FavoritesPage.User.ShoppingCart.UserId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.FavoritesPage.User.ShoppingCartId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.FavoritesPage.User.FavoritesPage",
+        "Type": "LDS_2425.Models.FavoritesPage",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.FavoritesPage.User.FavoritesPageId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.FavoritesPage.UserId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Owner.FavoritesPageId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.OwnerId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.Password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.PhoneNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.LoanedIn",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.LoanedOut",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.ReceiptsOwner",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.ReceiptsUser",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.ShoppingCart.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.ShoppingCart.Machines",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartMachine, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.ShoppingCart.LoanListings",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartLoan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.ShoppingCart.User.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.ShoppingCart.User.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.ShoppingCart.User.Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.ShoppingCart.User.Password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.ShoppingCart.User.PhoneNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.ShoppingCart.User.type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.ShoppingCart.User.LoanedIn",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.ShoppingCart.User.LoanedOut",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.ShoppingCart.User.ReceiptsOwner",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.ShoppingCart.User.ReceiptsUser",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.ShoppingCart.User.ShoppingCart",
+        "Type": "LDS_2425.Models.ShoppingCart",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.ShoppingCart.User.ShoppingCartId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.ShoppingCart.User.FavoritesPage.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.ShoppingCart.User.FavoritesPage.Machines",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartMachine, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.ShoppingCart.User.FavoritesPage.LoanListings",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartLoan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.ShoppingCart.User.FavoritesPage.User.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.ShoppingCart.User.FavoritesPage.User.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.ShoppingCart.User.FavoritesPage.User.Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.ShoppingCart.User.FavoritesPage.User.Password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.ShoppingCart.User.FavoritesPage.User.PhoneNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.ShoppingCart.User.FavoritesPage.User.type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.ShoppingCart.User.FavoritesPage.User.LoanedIn",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.ShoppingCart.User.FavoritesPage.User.LoanedOut",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.ShoppingCart.User.FavoritesPage.User.ReceiptsOwner",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.ShoppingCart.User.FavoritesPage.User.ReceiptsUser",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.ShoppingCart.User.FavoritesPage.User.ShoppingCart",
+        "Type": "LDS_2425.Models.ShoppingCart",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.ShoppingCart.User.FavoritesPage.User.ShoppingCartId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.ShoppingCart.User.FavoritesPage.User.FavoritesPage",
+        "Type": "LDS_2425.Models.FavoritesPage",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.ShoppingCart.User.FavoritesPage.User.FavoritesPageId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.ShoppingCart.User.FavoritesPage.UserId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.ShoppingCart.User.FavoritesPageId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.ShoppingCart.UserId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.ShoppingCartId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.FavoritesPage.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.FavoritesPage.Machines",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartMachine, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.FavoritesPage.LoanListings",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartLoan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.FavoritesPage.User.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.FavoritesPage.User.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.FavoritesPage.User.Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.FavoritesPage.User.Password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.FavoritesPage.User.PhoneNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.FavoritesPage.User.type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.FavoritesPage.User.LoanedIn",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.FavoritesPage.User.LoanedOut",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.FavoritesPage.User.ReceiptsOwner",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.FavoritesPage.User.ReceiptsUser",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.FavoritesPage.User.ShoppingCart.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.FavoritesPage.User.ShoppingCart.Machines",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartMachine, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.FavoritesPage.User.ShoppingCart.LoanListings",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartLoan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.FavoritesPage.User.ShoppingCart.User.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.FavoritesPage.User.ShoppingCart.User.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.FavoritesPage.User.ShoppingCart.User.Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.FavoritesPage.User.ShoppingCart.User.Password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.FavoritesPage.User.ShoppingCart.User.PhoneNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.FavoritesPage.User.ShoppingCart.User.type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.FavoritesPage.User.ShoppingCart.User.LoanedIn",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.FavoritesPage.User.ShoppingCart.User.LoanedOut",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.FavoritesPage.User.ShoppingCart.User.ReceiptsOwner",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.FavoritesPage.User.ShoppingCart.User.ReceiptsUser",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.FavoritesPage.User.ShoppingCart.User.ShoppingCart",
+        "Type": "LDS_2425.Models.ShoppingCart",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.FavoritesPage.User.ShoppingCart.User.ShoppingCartId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.FavoritesPage.User.ShoppingCart.User.FavoritesPage",
+        "Type": "LDS_2425.Models.FavoritesPage",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.FavoritesPage.User.ShoppingCart.User.FavoritesPageId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.FavoritesPage.User.ShoppingCart.UserId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.FavoritesPage.User.ShoppingCartId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.FavoritesPage.User.FavoritesPage",
+        "Type": "LDS_2425.Models.FavoritesPage",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.FavoritesPage.User.FavoritesPageId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.FavoritesPage.UserId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.User.FavoritesPageId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.UserId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Contracts",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Contract, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.ShoppingCarts",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartLoan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_Listing.Receipts",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Loan_ListingId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Machine.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Machine.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Machine.Brand",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Machine.Model",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Machine.Condition",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Machine.Capacity",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Machine.Description",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Machine.Year_of_Manufacture",
+        "Type": "System.DateOnly",
+        "IsRequired": false
+      },
+      {
+        "Name": "Machine.Price",
+        "Type": "System.Single",
+        "IsRequired": false
+      },
+      {
+        "Name": "Machine.Image",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Machine.Category.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Machine.Category.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Machine.Category.Description",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Machine.Category.Machines",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Machine, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Machine.Category.LoanListings",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Machine.CategoryId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Machine.ShoppingCarts",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartMachine, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Machine.FavoritesPages",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.FavoritesPageMachine, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Machine.Receipts",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "MachineId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Description",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Brand",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Model",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Condition",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Capacity",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Description",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.YearManufacture",
+        "Type": "System.DateOnly",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Price",
+        "Type": "System.Single",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Image",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.DateListed",
+        "Type": "System.DateOnly",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.StartDate",
+        "Type": "System.DateOnly",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.EndDate",
+        "Type": "System.DateOnly",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.WorkerAvailable",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.TransportNecessary",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Category.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Category.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Category.Description",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Category.Machines",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Machine, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Category.LoanListings",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.CategoryId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.Password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.PhoneNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.LoanedIn",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.LoanedOut",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.ReceiptsOwner",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.ReceiptsUser",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.ShoppingCart.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.ShoppingCart.Machines",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartMachine, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.ShoppingCart.LoanListings",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartLoan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.ShoppingCart.User.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.ShoppingCart.User.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.ShoppingCart.User.Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.ShoppingCart.User.Password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.ShoppingCart.User.PhoneNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.ShoppingCart.User.type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.ShoppingCart.User.LoanedIn",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.ShoppingCart.User.LoanedOut",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.ShoppingCart.User.ReceiptsOwner",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.ShoppingCart.User.ReceiptsUser",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.ShoppingCart.User.ShoppingCart",
+        "Type": "LDS_2425.Models.ShoppingCart",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.ShoppingCart.User.ShoppingCartId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.ShoppingCart.User.FavoritesPage.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.ShoppingCart.User.FavoritesPage.Machines",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartMachine, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.ShoppingCart.User.FavoritesPage.LoanListings",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartLoan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.ShoppingCart.User.FavoritesPage.User.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.ShoppingCart.User.FavoritesPage.User.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.ShoppingCart.User.FavoritesPage.User.Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.ShoppingCart.User.FavoritesPage.User.Password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.ShoppingCart.User.FavoritesPage.User.PhoneNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.ShoppingCart.User.FavoritesPage.User.type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.ShoppingCart.User.FavoritesPage.User.LoanedIn",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.ShoppingCart.User.FavoritesPage.User.LoanedOut",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.ShoppingCart.User.FavoritesPage.User.ReceiptsOwner",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.ShoppingCart.User.FavoritesPage.User.ReceiptsUser",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.ShoppingCart.User.FavoritesPage.User.ShoppingCart",
+        "Type": "LDS_2425.Models.ShoppingCart",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.ShoppingCart.User.FavoritesPage.User.ShoppingCartId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.ShoppingCart.User.FavoritesPage.User.FavoritesPage",
+        "Type": "LDS_2425.Models.FavoritesPage",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.ShoppingCart.User.FavoritesPage.User.FavoritesPageId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.ShoppingCart.User.FavoritesPage.UserId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.ShoppingCart.User.FavoritesPageId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.ShoppingCart.UserId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.ShoppingCartId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.FavoritesPage.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.FavoritesPage.Machines",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartMachine, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.FavoritesPage.LoanListings",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartLoan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.FavoritesPage.User.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.FavoritesPage.User.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.FavoritesPage.User.Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.FavoritesPage.User.Password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.FavoritesPage.User.PhoneNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.FavoritesPage.User.type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.FavoritesPage.User.LoanedIn",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.FavoritesPage.User.LoanedOut",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.FavoritesPage.User.ReceiptsOwner",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.FavoritesPage.User.ReceiptsUser",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.FavoritesPage.User.ShoppingCart.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.FavoritesPage.User.ShoppingCart.Machines",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartMachine, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.FavoritesPage.User.ShoppingCart.LoanListings",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartLoan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.FavoritesPage.User.ShoppingCart.User.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.FavoritesPage.User.ShoppingCart.User.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.FavoritesPage.User.ShoppingCart.User.Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.FavoritesPage.User.ShoppingCart.User.Password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.FavoritesPage.User.ShoppingCart.User.PhoneNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.FavoritesPage.User.ShoppingCart.User.type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.FavoritesPage.User.ShoppingCart.User.LoanedIn",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.FavoritesPage.User.ShoppingCart.User.LoanedOut",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.FavoritesPage.User.ShoppingCart.User.ReceiptsOwner",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.FavoritesPage.User.ShoppingCart.User.ReceiptsUser",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.FavoritesPage.User.ShoppingCart.User.ShoppingCart",
+        "Type": "LDS_2425.Models.ShoppingCart",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.FavoritesPage.User.ShoppingCart.User.ShoppingCartId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.FavoritesPage.User.ShoppingCart.User.FavoritesPage",
+        "Type": "LDS_2425.Models.FavoritesPage",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.FavoritesPage.User.ShoppingCart.User.FavoritesPageId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.FavoritesPage.User.ShoppingCart.UserId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.FavoritesPage.User.ShoppingCartId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.FavoritesPage.User.FavoritesPage",
+        "Type": "LDS_2425.Models.FavoritesPage",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.FavoritesPage.User.FavoritesPageId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.FavoritesPage.UserId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Owner.FavoritesPageId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.OwnerId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.Password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.PhoneNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.LoanedIn",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.LoanedOut",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.ReceiptsOwner",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.ReceiptsUser",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.ShoppingCart.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.ShoppingCart.Machines",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartMachine, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.ShoppingCart.LoanListings",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartLoan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.ShoppingCart.User.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.ShoppingCart.User.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.ShoppingCart.User.Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.ShoppingCart.User.Password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.ShoppingCart.User.PhoneNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.ShoppingCart.User.type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.ShoppingCart.User.LoanedIn",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.ShoppingCart.User.LoanedOut",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.ShoppingCart.User.ReceiptsOwner",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.ShoppingCart.User.ReceiptsUser",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.ShoppingCart.User.ShoppingCart",
+        "Type": "LDS_2425.Models.ShoppingCart",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.ShoppingCart.User.ShoppingCartId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.ShoppingCart.User.FavoritesPage.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.ShoppingCart.User.FavoritesPage.Machines",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartMachine, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.ShoppingCart.User.FavoritesPage.LoanListings",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartLoan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.ShoppingCart.User.FavoritesPage.User.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.ShoppingCart.User.FavoritesPage.User.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.ShoppingCart.User.FavoritesPage.User.Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.ShoppingCart.User.FavoritesPage.User.Password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.ShoppingCart.User.FavoritesPage.User.PhoneNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.ShoppingCart.User.FavoritesPage.User.type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.ShoppingCart.User.FavoritesPage.User.LoanedIn",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.ShoppingCart.User.FavoritesPage.User.LoanedOut",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.ShoppingCart.User.FavoritesPage.User.ReceiptsOwner",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.ShoppingCart.User.FavoritesPage.User.ReceiptsUser",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.ShoppingCart.User.FavoritesPage.User.ShoppingCart",
+        "Type": "LDS_2425.Models.ShoppingCart",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.ShoppingCart.User.FavoritesPage.User.ShoppingCartId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.ShoppingCart.User.FavoritesPage.User.FavoritesPage",
+        "Type": "LDS_2425.Models.FavoritesPage",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.ShoppingCart.User.FavoritesPage.User.FavoritesPageId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.ShoppingCart.User.FavoritesPage.UserId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.ShoppingCart.User.FavoritesPageId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.ShoppingCart.UserId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.ShoppingCartId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.FavoritesPage.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.FavoritesPage.Machines",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartMachine, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.FavoritesPage.LoanListings",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartLoan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.FavoritesPage.User.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.FavoritesPage.User.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.FavoritesPage.User.Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.FavoritesPage.User.Password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.FavoritesPage.User.PhoneNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.FavoritesPage.User.type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.FavoritesPage.User.LoanedIn",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.FavoritesPage.User.LoanedOut",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.FavoritesPage.User.ReceiptsOwner",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.FavoritesPage.User.ReceiptsUser",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.FavoritesPage.User.ShoppingCart.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.FavoritesPage.User.ShoppingCart.Machines",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartMachine, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.FavoritesPage.User.ShoppingCart.LoanListings",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartLoan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.FavoritesPage.User.ShoppingCart.User.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.FavoritesPage.User.ShoppingCart.User.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.FavoritesPage.User.ShoppingCart.User.Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.FavoritesPage.User.ShoppingCart.User.Password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.FavoritesPage.User.ShoppingCart.User.PhoneNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.FavoritesPage.User.ShoppingCart.User.type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.FavoritesPage.User.ShoppingCart.User.LoanedIn",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.FavoritesPage.User.ShoppingCart.User.LoanedOut",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.FavoritesPage.User.ShoppingCart.User.ReceiptsOwner",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.FavoritesPage.User.ShoppingCart.User.ReceiptsUser",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.FavoritesPage.User.ShoppingCart.User.ShoppingCart",
+        "Type": "LDS_2425.Models.ShoppingCart",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.FavoritesPage.User.ShoppingCart.User.ShoppingCartId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.FavoritesPage.User.ShoppingCart.User.FavoritesPage",
+        "Type": "LDS_2425.Models.FavoritesPage",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.FavoritesPage.User.ShoppingCart.User.FavoritesPageId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.FavoritesPage.User.ShoppingCart.UserId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.FavoritesPage.User.ShoppingCartId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.FavoritesPage.User.FavoritesPage",
+        "Type": "LDS_2425.Models.FavoritesPage",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.FavoritesPage.User.FavoritesPageId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.FavoritesPage.UserId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.User.FavoritesPageId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.UserId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Contracts",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Contract, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.ShoppingCarts",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartLoan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Listing.Receipts",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.ListingId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.CompanyName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.CompanyEmail",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.CompanyPhone",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.CompanyNif",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.DateReceipt",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.Password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.PhoneNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.LoanedIn",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.LoanedOut",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.ReceiptsOwner",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.ReceiptsUser",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.ShoppingCart.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.ShoppingCart.Machines",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartMachine, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.ShoppingCart.LoanListings",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartLoan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.ShoppingCart.User.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.ShoppingCart.User.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.ShoppingCart.User.Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.ShoppingCart.User.Password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.ShoppingCart.User.PhoneNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.ShoppingCart.User.type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.ShoppingCart.User.LoanedIn",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.ShoppingCart.User.LoanedOut",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.ShoppingCart.User.ReceiptsOwner",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.ShoppingCart.User.ReceiptsUser",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.ShoppingCart.User.ShoppingCart",
+        "Type": "LDS_2425.Models.ShoppingCart",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.ShoppingCart.User.ShoppingCartId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.ShoppingCart.User.FavoritesPage.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.ShoppingCart.User.FavoritesPage.Machines",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartMachine, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.ShoppingCart.User.FavoritesPage.LoanListings",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartLoan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.ShoppingCart.User.FavoritesPage.User.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.ShoppingCart.User.FavoritesPage.User.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.ShoppingCart.User.FavoritesPage.User.Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.ShoppingCart.User.FavoritesPage.User.Password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.ShoppingCart.User.FavoritesPage.User.PhoneNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.ShoppingCart.User.FavoritesPage.User.type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.ShoppingCart.User.FavoritesPage.User.LoanedIn",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.ShoppingCart.User.FavoritesPage.User.LoanedOut",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.ShoppingCart.User.FavoritesPage.User.ReceiptsOwner",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.ShoppingCart.User.FavoritesPage.User.ReceiptsUser",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.ShoppingCart.User.FavoritesPage.User.ShoppingCart",
+        "Type": "LDS_2425.Models.ShoppingCart",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.ShoppingCart.User.FavoritesPage.User.ShoppingCartId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.ShoppingCart.User.FavoritesPage.User.FavoritesPage",
+        "Type": "LDS_2425.Models.FavoritesPage",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.ShoppingCart.User.FavoritesPage.User.FavoritesPageId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.ShoppingCart.User.FavoritesPage.UserId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.ShoppingCart.User.FavoritesPageId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.ShoppingCart.UserId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.ShoppingCartId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.FavoritesPage.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.FavoritesPage.Machines",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartMachine, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.FavoritesPage.LoanListings",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartLoan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.FavoritesPage.User.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.FavoritesPage.User.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.FavoritesPage.User.Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.FavoritesPage.User.Password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.FavoritesPage.User.PhoneNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.FavoritesPage.User.type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.FavoritesPage.User.LoanedIn",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.FavoritesPage.User.LoanedOut",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.FavoritesPage.User.ReceiptsOwner",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.FavoritesPage.User.ReceiptsUser",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.FavoritesPage.User.ShoppingCart.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.FavoritesPage.User.ShoppingCart.Machines",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartMachine, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.FavoritesPage.User.ShoppingCart.LoanListings",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartLoan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.FavoritesPage.User.ShoppingCart.User.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.FavoritesPage.User.ShoppingCart.User.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.FavoritesPage.User.ShoppingCart.User.Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.FavoritesPage.User.ShoppingCart.User.Password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.FavoritesPage.User.ShoppingCart.User.PhoneNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.FavoritesPage.User.ShoppingCart.User.type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.FavoritesPage.User.ShoppingCart.User.LoanedIn",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.FavoritesPage.User.ShoppingCart.User.LoanedOut",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.FavoritesPage.User.ShoppingCart.User.ReceiptsOwner",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.FavoritesPage.User.ShoppingCart.User.ReceiptsUser",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.FavoritesPage.User.ShoppingCart.User.ShoppingCart",
+        "Type": "LDS_2425.Models.ShoppingCart",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.FavoritesPage.User.ShoppingCart.User.ShoppingCartId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.FavoritesPage.User.ShoppingCart.User.FavoritesPage",
+        "Type": "LDS_2425.Models.FavoritesPage",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.FavoritesPage.User.ShoppingCart.User.FavoritesPageId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.FavoritesPage.User.ShoppingCart.UserId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.FavoritesPage.User.ShoppingCartId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.FavoritesPage.User.FavoritesPage",
+        "Type": "LDS_2425.Models.FavoritesPage",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.FavoritesPage.User.FavoritesPageId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.FavoritesPage.UserId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Owner.FavoritesPageId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.OwnerId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.Password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.PhoneNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.LoanedIn",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.LoanedOut",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.ReceiptsOwner",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.ReceiptsUser",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.ShoppingCart.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.ShoppingCart.Machines",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartMachine, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.ShoppingCart.LoanListings",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartLoan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.ShoppingCart.User.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.ShoppingCart.User.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.ShoppingCart.User.Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.ShoppingCart.User.Password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.ShoppingCart.User.PhoneNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.ShoppingCart.User.type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.ShoppingCart.User.LoanedIn",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.ShoppingCart.User.LoanedOut",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.ShoppingCart.User.ReceiptsOwner",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.ShoppingCart.User.ReceiptsUser",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.ShoppingCart.User.ShoppingCart",
+        "Type": "LDS_2425.Models.ShoppingCart",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.ShoppingCart.User.ShoppingCartId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.ShoppingCart.User.FavoritesPage.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.ShoppingCart.User.FavoritesPage.Machines",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartMachine, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.ShoppingCart.User.FavoritesPage.LoanListings",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartLoan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.ShoppingCart.User.FavoritesPage.User.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.ShoppingCart.User.FavoritesPage.User.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.ShoppingCart.User.FavoritesPage.User.Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.ShoppingCart.User.FavoritesPage.User.Password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.ShoppingCart.User.FavoritesPage.User.PhoneNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.ShoppingCart.User.FavoritesPage.User.type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.ShoppingCart.User.FavoritesPage.User.LoanedIn",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.ShoppingCart.User.FavoritesPage.User.LoanedOut",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.ShoppingCart.User.FavoritesPage.User.ReceiptsOwner",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.ShoppingCart.User.FavoritesPage.User.ReceiptsUser",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.ShoppingCart.User.FavoritesPage.User.ShoppingCart",
+        "Type": "LDS_2425.Models.ShoppingCart",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.ShoppingCart.User.FavoritesPage.User.ShoppingCartId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.ShoppingCart.User.FavoritesPage.User.FavoritesPage",
+        "Type": "LDS_2425.Models.FavoritesPage",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.ShoppingCart.User.FavoritesPage.User.FavoritesPageId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.ShoppingCart.User.FavoritesPage.UserId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.ShoppingCart.User.FavoritesPageId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.ShoppingCart.UserId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.ShoppingCartId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.FavoritesPage.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.FavoritesPage.Machines",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartMachine, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.FavoritesPage.LoanListings",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartLoan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.FavoritesPage.User.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.FavoritesPage.User.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.FavoritesPage.User.Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.FavoritesPage.User.Password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.FavoritesPage.User.PhoneNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.FavoritesPage.User.type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.FavoritesPage.User.LoanedIn",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.FavoritesPage.User.LoanedOut",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.FavoritesPage.User.ReceiptsOwner",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.FavoritesPage.User.ReceiptsUser",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.FavoritesPage.User.ShoppingCart.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.FavoritesPage.User.ShoppingCart.Machines",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartMachine, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.FavoritesPage.User.ShoppingCart.LoanListings",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartLoan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.FavoritesPage.User.ShoppingCart.User.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.FavoritesPage.User.ShoppingCart.User.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.FavoritesPage.User.ShoppingCart.User.Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.FavoritesPage.User.ShoppingCart.User.Password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.FavoritesPage.User.ShoppingCart.User.PhoneNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.FavoritesPage.User.ShoppingCart.User.type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.FavoritesPage.User.ShoppingCart.User.LoanedIn",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.FavoritesPage.User.ShoppingCart.User.LoanedOut",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.FavoritesPage.User.ShoppingCart.User.ReceiptsOwner",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.FavoritesPage.User.ShoppingCart.User.ReceiptsUser",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.FavoritesPage.User.ShoppingCart.User.ShoppingCart",
+        "Type": "LDS_2425.Models.ShoppingCart",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.FavoritesPage.User.ShoppingCart.User.ShoppingCartId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.FavoritesPage.User.ShoppingCart.User.FavoritesPage",
+        "Type": "LDS_2425.Models.FavoritesPage",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.FavoritesPage.User.ShoppingCart.User.FavoritesPageId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.FavoritesPage.User.ShoppingCart.UserId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.FavoritesPage.User.ShoppingCartId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.FavoritesPage.User.FavoritesPage",
+        "Type": "LDS_2425.Models.FavoritesPage",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.FavoritesPage.User.FavoritesPageId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.FavoritesPage.UserId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.User.FavoritesPageId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.UserId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Brand",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Model",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Condition",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Capacity",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Description",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.YearManufacture",
+        "Type": "System.DateOnly",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Price",
+        "Type": "System.Single",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Image",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.DateListed",
+        "Type": "System.DateOnly",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.StartDate",
+        "Type": "System.DateOnly",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.EndDate",
+        "Type": "System.DateOnly",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.WorkerAvailable",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.TransportNecessary",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Category.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Category.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Category.Description",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Category.Machines",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Machine, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Category.LoanListings",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.CategoryId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.Password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.PhoneNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.LoanedIn",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.LoanedOut",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.ReceiptsOwner",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.ReceiptsUser",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.ShoppingCart.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.ShoppingCart.Machines",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartMachine, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.ShoppingCart.LoanListings",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartLoan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.ShoppingCart.User.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.ShoppingCart.User.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.ShoppingCart.User.Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.ShoppingCart.User.Password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.ShoppingCart.User.PhoneNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.ShoppingCart.User.type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.ShoppingCart.User.LoanedIn",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.ShoppingCart.User.LoanedOut",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.ShoppingCart.User.ReceiptsOwner",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.ShoppingCart.User.ReceiptsUser",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.ShoppingCart.User.ShoppingCart",
+        "Type": "LDS_2425.Models.ShoppingCart",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.ShoppingCart.User.ShoppingCartId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.ShoppingCart.User.FavoritesPage.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.ShoppingCart.User.FavoritesPage.Machines",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartMachine, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.ShoppingCart.User.FavoritesPage.LoanListings",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartLoan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.ShoppingCart.User.FavoritesPage.User.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.ShoppingCart.User.FavoritesPage.User.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.ShoppingCart.User.FavoritesPage.User.Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.ShoppingCart.User.FavoritesPage.User.Password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.ShoppingCart.User.FavoritesPage.User.PhoneNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.ShoppingCart.User.FavoritesPage.User.type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.ShoppingCart.User.FavoritesPage.User.LoanedIn",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.ShoppingCart.User.FavoritesPage.User.LoanedOut",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.ShoppingCart.User.FavoritesPage.User.ReceiptsOwner",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.ShoppingCart.User.FavoritesPage.User.ReceiptsUser",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.ShoppingCart.User.FavoritesPage.User.ShoppingCart",
+        "Type": "LDS_2425.Models.ShoppingCart",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.ShoppingCart.User.FavoritesPage.User.ShoppingCartId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.ShoppingCart.User.FavoritesPage.User.FavoritesPage",
+        "Type": "LDS_2425.Models.FavoritesPage",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.ShoppingCart.User.FavoritesPage.User.FavoritesPageId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.ShoppingCart.User.FavoritesPage.UserId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.ShoppingCart.User.FavoritesPageId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.ShoppingCart.UserId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.ShoppingCartId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.FavoritesPage.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.FavoritesPage.Machines",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartMachine, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.FavoritesPage.LoanListings",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartLoan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.FavoritesPage.User.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.FavoritesPage.User.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.FavoritesPage.User.Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.FavoritesPage.User.Password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.FavoritesPage.User.PhoneNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.FavoritesPage.User.type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.FavoritesPage.User.LoanedIn",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.FavoritesPage.User.LoanedOut",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.FavoritesPage.User.ReceiptsOwner",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.FavoritesPage.User.ReceiptsUser",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.FavoritesPage.User.ShoppingCart.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.FavoritesPage.User.ShoppingCart.Machines",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartMachine, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.FavoritesPage.User.ShoppingCart.LoanListings",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartLoan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.FavoritesPage.User.ShoppingCart.User.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.FavoritesPage.User.ShoppingCart.User.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.FavoritesPage.User.ShoppingCart.User.Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.FavoritesPage.User.ShoppingCart.User.Password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.FavoritesPage.User.ShoppingCart.User.PhoneNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.FavoritesPage.User.ShoppingCart.User.type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.FavoritesPage.User.ShoppingCart.User.LoanedIn",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.FavoritesPage.User.ShoppingCart.User.LoanedOut",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.FavoritesPage.User.ShoppingCart.User.ReceiptsOwner",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.FavoritesPage.User.ShoppingCart.User.ReceiptsUser",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.FavoritesPage.User.ShoppingCart.User.ShoppingCart",
+        "Type": "LDS_2425.Models.ShoppingCart",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.FavoritesPage.User.ShoppingCart.User.ShoppingCartId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.FavoritesPage.User.ShoppingCart.User.FavoritesPage",
+        "Type": "LDS_2425.Models.FavoritesPage",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.FavoritesPage.User.ShoppingCart.User.FavoritesPageId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.FavoritesPage.User.ShoppingCart.UserId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.FavoritesPage.User.ShoppingCartId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.FavoritesPage.User.FavoritesPage",
+        "Type": "LDS_2425.Models.FavoritesPage",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.FavoritesPage.User.FavoritesPageId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.FavoritesPage.UserId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Owner.FavoritesPageId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.OwnerId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.Password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.PhoneNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.LoanedIn",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.LoanedOut",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.ReceiptsOwner",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.ReceiptsUser",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.ShoppingCart.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.ShoppingCart.Machines",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartMachine, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.ShoppingCart.LoanListings",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartLoan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.ShoppingCart.User.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.ShoppingCart.User.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.ShoppingCart.User.Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.ShoppingCart.User.Password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.ShoppingCart.User.PhoneNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.ShoppingCart.User.type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.ShoppingCart.User.LoanedIn",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.ShoppingCart.User.LoanedOut",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.ShoppingCart.User.ReceiptsOwner",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.ShoppingCart.User.ReceiptsUser",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.ShoppingCart.User.ShoppingCart",
+        "Type": "LDS_2425.Models.ShoppingCart",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.ShoppingCart.User.ShoppingCartId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.ShoppingCart.User.FavoritesPage.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.ShoppingCart.User.FavoritesPage.Machines",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartMachine, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.ShoppingCart.User.FavoritesPage.LoanListings",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartLoan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.ShoppingCart.User.FavoritesPage.User.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.ShoppingCart.User.FavoritesPage.User.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.ShoppingCart.User.FavoritesPage.User.Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.ShoppingCart.User.FavoritesPage.User.Password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.ShoppingCart.User.FavoritesPage.User.PhoneNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.ShoppingCart.User.FavoritesPage.User.type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.ShoppingCart.User.FavoritesPage.User.LoanedIn",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.ShoppingCart.User.FavoritesPage.User.LoanedOut",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.ShoppingCart.User.FavoritesPage.User.ReceiptsOwner",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.ShoppingCart.User.FavoritesPage.User.ReceiptsUser",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.ShoppingCart.User.FavoritesPage.User.ShoppingCart",
+        "Type": "LDS_2425.Models.ShoppingCart",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.ShoppingCart.User.FavoritesPage.User.ShoppingCartId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.ShoppingCart.User.FavoritesPage.User.FavoritesPage",
+        "Type": "LDS_2425.Models.FavoritesPage",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.ShoppingCart.User.FavoritesPage.User.FavoritesPageId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.ShoppingCart.User.FavoritesPage.UserId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.ShoppingCart.User.FavoritesPageId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.ShoppingCart.UserId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.ShoppingCartId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.FavoritesPage.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.FavoritesPage.Machines",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartMachine, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.FavoritesPage.LoanListings",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartLoan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.FavoritesPage.User.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.FavoritesPage.User.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.FavoritesPage.User.Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.FavoritesPage.User.Password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.FavoritesPage.User.PhoneNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.FavoritesPage.User.type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.FavoritesPage.User.LoanedIn",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.FavoritesPage.User.LoanedOut",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.FavoritesPage.User.ReceiptsOwner",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.FavoritesPage.User.ReceiptsUser",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.FavoritesPage.User.ShoppingCart.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.FavoritesPage.User.ShoppingCart.Machines",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartMachine, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.FavoritesPage.User.ShoppingCart.LoanListings",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartLoan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.FavoritesPage.User.ShoppingCart.User.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.FavoritesPage.User.ShoppingCart.User.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.FavoritesPage.User.ShoppingCart.User.Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.FavoritesPage.User.ShoppingCart.User.Password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.FavoritesPage.User.ShoppingCart.User.PhoneNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.FavoritesPage.User.ShoppingCart.User.type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.FavoritesPage.User.ShoppingCart.User.LoanedIn",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.FavoritesPage.User.ShoppingCart.User.LoanedOut",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.FavoritesPage.User.ShoppingCart.User.ReceiptsOwner",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.FavoritesPage.User.ShoppingCart.User.ReceiptsUser",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.FavoritesPage.User.ShoppingCart.User.ShoppingCart",
+        "Type": "LDS_2425.Models.ShoppingCart",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.FavoritesPage.User.ShoppingCart.User.ShoppingCartId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.FavoritesPage.User.ShoppingCart.User.FavoritesPage",
+        "Type": "LDS_2425.Models.FavoritesPage",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.FavoritesPage.User.ShoppingCart.User.FavoritesPageId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.FavoritesPage.User.ShoppingCart.UserId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.FavoritesPage.User.ShoppingCartId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.FavoritesPage.User.FavoritesPage",
+        "Type": "LDS_2425.Models.FavoritesPage",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.FavoritesPage.User.FavoritesPageId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.FavoritesPage.UserId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.User.FavoritesPageId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.UserId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Contracts",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Contract, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.ShoppingCarts",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartLoan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_Listing.Receipts",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Loan_ListingId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Machine.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Machine.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Machine.Brand",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Machine.Model",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Machine.Condition",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Machine.Capacity",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Machine.Description",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Machine.Year_of_Manufacture",
+        "Type": "System.DateOnly",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Machine.Price",
+        "Type": "System.Single",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Machine.Image",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Machine.Category.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Machine.Category.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Machine.Category.Description",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Machine.Category.Machines",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Machine, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Machine.Category.LoanListings",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Loan_Listing, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Machine.CategoryId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Machine.ShoppingCarts",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.ShoppingCartMachine, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Machine.FavoritesPages",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.FavoritesPageMachine, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Machine.Receipts",
+        "Type": "System.Collections.Generic.ICollection\u00601[[LDS_2425.Models.Receipt, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.MachineId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.Contract",
+        "Type": "LDS_2425.Models.Contract",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.Receipt.ContractId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contract.ReceiptId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "ContractId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LDS_2425.Controllers.ReceiptsController",
+    "Method": "Delete",
+    "RelativePath": "{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "LDS_2425.Controllers.CategoriesController",
     "Method": "GetCategory",
     "RelativePath": "api/Categories",
@@ -159,6 +5032,115 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "LDS_2425.Controllers.ContractsController",
+    "Method": "GetContracts",
+    "RelativePath": "api/Contracts",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[LDS_2425.Models.Contract, LDS_2425, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "LDS_2425.Controllers.ContractsController",
+    "Method": "Add",
+    "RelativePath": "api/Contracts",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "contract",
+        "Type": "LDS_2425.Models.Contract",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "LDS_2425.Models.Contract",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "LDS_2425.Controllers.ContractsController",
+    "Method": "GetContracts",
+    "RelativePath": "api/Contracts/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "LDS_2425.Models.Contract",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "LDS_2425.Controllers.ContractsController",
+    "Method": "Update",
+    "RelativePath": "api/Contracts/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "contract",
+        "Type": "LDS_2425.Models.Contract",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LDS_2425.Controllers.ContractsController",
+    "Method": "Delete",
+    "RelativePath": "api/Contracts/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "LDS_2425.Controllers.MachinesController",

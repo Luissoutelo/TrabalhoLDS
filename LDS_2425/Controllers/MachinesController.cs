@@ -8,7 +8,7 @@ namespace LDS_2425.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class MachinesController : ControllerBase
+    public class MachinesController : Controller
     {
         private readonly MachineHubContext dbContext;
 
