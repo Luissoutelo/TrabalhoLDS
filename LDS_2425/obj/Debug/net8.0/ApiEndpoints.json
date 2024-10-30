@@ -335,8 +335,8 @@
         "IsRequired": true
       },
       {
-        "Name": "machineCart",
-        "Type": "LDS_2425.Models.ShoppingCartMachine",
+        "Name": "request",
+        "Type": "LDS_2425.Models.AddMachineToCartRequest",
         "IsRequired": true
       }
     ],

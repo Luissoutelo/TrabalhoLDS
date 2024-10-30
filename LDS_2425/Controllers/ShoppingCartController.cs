@@ -45,7 +45,7 @@ namespace LDS_2425.Controllers
 
         // Método para adicionar uma máquina ao carrinho do usuário
         [HttpPost("{userId}")]
-        public async Task<ActionResult<ShoppingCartMachine>> AddMachineToCart(int userId, [FromBody] ShoppingCartMachine machineCart)
+        public async Task<ActionResult<ShoppingCartMachine>> AddMachineToCart(int userId, [FromBody] AddMachineToCartRequest request)
         {
             // Obtém o carrinho do banco de dados
             var shoppingCart = await dbContext.ShoppingCarts
@@ -59,7 +59,7 @@ namespace LDS_2425.Controllers
 
             // Verifica se a máquina já está no carrinho
             var machineInCart = shoppingCart.Machines
-                .FirstOrDefault(sm => sm.MachineId == machineCart.MachineId);
+                .FirstOrDefault(sm => sm.MachineId == request.MachineId);
 
             if (machineInCart != null)
             {
@@ -70,7 +70,7 @@ namespace LDS_2425.Controllers
             var shoppingCartMachine = new ShoppingCartMachine
             {
                 ShoppingCartId = shoppingCart.Id,
-                MachineId = machineCart.MachineId
+                MachineId = request.MachineId
             };
 
             dbContext.ShoppingCartMachineConnections.Add(shoppingCartMachine);
