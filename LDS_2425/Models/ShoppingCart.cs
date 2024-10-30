@@ -1,13 +1,14 @@
-﻿namespace LDS_2425.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace LDS_2425.Models
 {
     public class ShoppingCart
     {
-        public int Id { get; set; }
+        [Key]
 
         public ICollection<ShoppingCartMachine>? Machines { get; set; }
+        public int Id { get; set; }
+         public int userId {  get; set; }
 
-        public ICollection<ShoppingCartLoan_Listing>? LoanListings { get; set; }
-
-        public required int UserId { get; set; }
     }
 }

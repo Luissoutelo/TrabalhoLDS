@@ -296,6 +296,43 @@
     ]
   },
   {
+    "ContainingType": "LDS_2425.Controllers.ShoppingCartController",
+    "Method": "GetShoppingCart",
+    "RelativePath": "api/ShoppingCart/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LDS_2425.Controllers.ShoppingCartController",
+    "Method": "AddMachineToCart",
+    "RelativePath": "api/ShoppingCart/{userId}/add-machine",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "machineId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "LDS_2425.Controllers.UsersController",
     "Method": "GetUsers",
     "RelativePath": "api/Users",
