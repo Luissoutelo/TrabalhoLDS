@@ -24,9 +24,9 @@
 
         public required DateOnly DateListed { get; set; }
 
-        public required DateOnly StartDate { get; set; }
+        public DateOnly StartDate { get; set; }
 
-        public required DateOnly EndDate { get; set; }
+        public DateOnly EndDate { get; set; }
 
         public required Boolean WorkerAvailable { get; set; }
 
@@ -36,6 +36,6 @@
 
         public required int OwnerId { get; set; }
 
-        public required int UserId { get; set; }
+        public int UserId { get; set; }
     }
 }
