@@ -45,8 +45,9 @@ namespace LDS_2425.Controllers
 
         // Método para adicionar uma máquina ao carrinho do usuário
         [HttpPost("{userId}")]
-        public async Task<IActionResult> AddMachineToCart(int userId, int machineId)
+        public async Task<ActionResult<ShoppingCartMachine>> AddMachineToCart(int userId, [FromBody] ShoppingCartMachine machineCart)
         {
+            // Obtém o carrinho do banco de dados
             var shoppingCart = await dbContext.ShoppingCarts
                 .Include(sc => sc.Machines)
                 .FirstOrDefaultAsync(c => c.userId == userId);
@@ -58,30 +59,32 @@ namespace LDS_2425.Controllers
 
             // Verifica se a máquina já está no carrinho
             var machineInCart = shoppingCart.Machines
-                .FirstOrDefault(sm => sm.MachineId == machineId);
+                .FirstOrDefault(sm => sm.MachineId == machineCart.MachineId);
 
             if (machineInCart != null)
             {
                 return BadRequest(new { message = "Machine is already in the cart." });
             }
 
+            // Cria um novo objeto de conexão para a máquina no carrinho
             var shoppingCartMachine = new ShoppingCartMachine
             {
                 ShoppingCartId = shoppingCart.Id,
-                MachineId = machineId
+                MachineId = machineCart.MachineId
             };
 
             dbContext.ShoppingCartMachineConnections.Add(shoppingCartMachine);
             await dbContext.SaveChangesAsync();
 
-            return Ok(new { message = "Machine added to cart." });
+            return Ok(new { message = "Machine added to cart.", data = shoppingCartMachine });
         }
+
 
         /// Método para deletar máquina do carrinho
         [HttpDelete("{userId}/{machineId}")]
         public async Task<IActionResult> RemoveMachineFromCart(int userId, int machineId)
         {
-            // Obtém o carrinho do banco de dados
+           
             var shoppingCart = await dbContext.ShoppingCarts
         .FirstOrDefaultAsync(c => c.userId == userId);
 
@@ -90,7 +93,7 @@ namespace LDS_2425.Controllers
                 return NotFound(new { message = "Shopping cart not found." });
             }
 
-            // Verifica se a máquina está no carrinho
+          
             var machineInCart = await dbContext.ShoppingCartMachineConnections
                 .FirstOrDefaultAsync(scm => scm.ShoppingCartId == shoppingCart.Id && scm.MachineId == machineId);
 
@@ -99,7 +102,7 @@ namespace LDS_2425.Controllers
                 return NotFound(new { message = "Machine not found in the cart." });
             }
 
-            // Remove a máquina do carrinho
+            
             dbContext.ShoppingCartMachineConnections.Remove(machineInCart);
             await dbContext.SaveChangesAsync();
 

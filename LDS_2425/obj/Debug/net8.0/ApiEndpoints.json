@@ -323,6 +323,37 @@
   },
   {
     "ContainingType": "LDS_2425.Controllers.ShoppingCartController",
+    "Method": "AddMachineToCart",
+    "RelativePath": "api/ShoppingCart/{userId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "machineCart",
+        "Type": "LDS_2425.Models.ShoppingCartMachine",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "LDS_2425.Models.ShoppingCartMachine",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "LDS_2425.Controllers.ShoppingCartController",
     "Method": "RemoveMachineFromCart",
     "RelativePath": "api/ShoppingCart/{userId}/{machineId}",
     "HttpMethod": "DELETE",
@@ -338,27 +369,6 @@
         "Name": "machineId",
         "Type": "System.Int32",
         "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "LDS_2425.Controllers.ShoppingCartController",
-    "Method": "AddMachineToCart",
-    "RelativePath": "api/ShoppingCart/{userId}/add-machine",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "userId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "machineId",
-        "Type": "System.Int32",
-        "IsRequired": false
       }
     ],
     "ReturnTypes": []
