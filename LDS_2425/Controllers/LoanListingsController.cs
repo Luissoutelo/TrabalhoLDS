@@ -115,10 +115,23 @@ namespace LDS_2425.Controllers
 
             var loanMachine = dbContext.Loan_Listings.Find(id);
 
+            loanMachine.Id = loanMachine.Id;
+            loanMachine.Name = loanMachine.Name;
+            loanMachine.Brand = loanMachine.Brand;
+            loanMachine.Model = loanMachine.Model;
+            loanMachine.Capacity = loanMachine.Capacity;
+            loanMachine.Description = loanMachine.Description;
+            loanMachine.YearManufacture = loanMachine.YearManufacture;
+            loanMachine.Price = loanMachine.Price;
+            loanMachine.Image = loanMachine.Image;
+            loanMachine.DateListed = loanMachine.DateListed;
+            loanMachine.OwnerId = loanMachine.OwnerId;
+
             loanMachine.StartDate = loan_Listing.StartDate;
             loanMachine.EndDate = loan_Listing.EndDate;
             loanMachine.TransportNecessary = loan_Listing.TransportNecessary;
             loanMachine.WorkerAvailable = loan_Listing.WorkerAvailable;
+            loanMachine.UserId = loan_Listing.UserId;
 
             /*var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
             if (userId == null)
