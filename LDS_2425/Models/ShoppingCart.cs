@@ -8,7 +8,7 @@ namespace LDS_2425.Models
 
         public ICollection<ShoppingCartMachine>? Machines { get; set; }
         public int Id { get; set; }
-         public int userId {  get; set; }
+        public int userId {  get; set; }
 
     }
 }

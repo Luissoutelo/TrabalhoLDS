@@ -297,7 +297,7 @@
   },
   {
     "ContainingType": "LDS_2425.Controllers.ShoppingCartController",
-    "Method": "GetShoppingCart",
+    "Method": "GetMachineFromCart",
     "RelativePath": "api/ShoppingCart/{userId}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -327,7 +327,7 @@
       {
         "Name": "machineId",
         "Type": "System.Int32",
-        "IsRequired": true
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []

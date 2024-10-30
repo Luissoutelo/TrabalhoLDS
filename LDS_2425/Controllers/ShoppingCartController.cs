@@ -1,9 +1,8 @@
-﻿using System.Reflection.PortableExecutable;
-using System.Security.Claims;
-using LDS_2425.Data;
+﻿using LDS_2425.Data;
 using LDS_2425.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+
 
 namespace LDS_2425.Controllers
 {
@@ -14,70 +13,67 @@ namespace LDS_2425.Controllers
         private readonly MachineHubContext dbContext;
         public ShoppingCartController(MachineHubContext dbContext) => this.dbContext = dbContext;
 
-
-        //sem lgin
+        // Método para obter máquinas do carrinho do usuário
         [HttpGet("{userId}")]
-        public async Task<IActionResult> GetShoppingCart(int userId) { 
-
-
+        public async Task<IActionResult> GetMachineFromCart(int userId)
+        {
             var shoppingCart = await dbContext.ShoppingCarts.FirstOrDefaultAsync(c => c.userId == userId);
 
             if (shoppingCart == null)
             {
-                return NotFound("Shopping Cart not found!"); // Retorna 404 se o carrinho não existir
+                return NotFound("Shopping Cart not found!"); 
             }
-           var shoppingCartMachines= await dbContext.ShoppingCartMachineConnections
-                .Where( scm => scm.ShoppingCartId==shoppingCart.Id)
+
+            var shoppingCartMachines = await dbContext.ShoppingCartMachineConnections
+                .Where(scm => scm.ShoppingCartId == shoppingCart.Id)
                 .ToListAsync();
 
-            if (shoppingCartMachines == null)
+            if (!shoppingCartMachines.Any())
             {
                 return Ok(new { Message = "The shopping cart is empty." });
             }
-            var machinesIds=shoppingCartMachines.Select(scm=>scm.MachineId).ToList();
+
+            var machineIds = shoppingCartMachines.Select(scm => scm.MachineId).ToList();
 
             var machines = await dbContext.Machines
-                .Where(m => machinesIds.Contains(m.Id))
+                .Where(m => machineIds.Contains(m.Id))
                 .ToListAsync();
 
             return Ok(machines);
-       
-    }
+        }
+
+        // Método para adicionar uma máquina ao carrinho do usuário
         [HttpPost("{userId}/add-machine")]
-        public async Task<IActionResult> AddMachineToCart(int userId, [FromBody] int machineId)
+        public async Task<IActionResult> AddMachineToCart(int userId,  int machineId)
         {
-            var shoppingCart = await dbContext.ShoppingCarts.FirstOrDefaultAsync(c => c.userId == userId);
+            var shoppingCart = await dbContext.ShoppingCarts
+                .Include(sc => sc.Machines)
+                .FirstOrDefaultAsync(c => c.userId == userId);
 
             if (shoppingCart == null)
             {
                 return NotFound(new { message = "Shopping cart not found." });
             }
+
+            // Verifica se a máquina já está no carrinho
             var machineInCart = shoppingCart.Machines
-            .FirstOrDefault(sm => sm.MachineId == machineId);
+                .FirstOrDefault(sm => sm.MachineId == machineId);
 
+            if (machineInCart != null)
+            {
+                return BadRequest(new { message = "Machine is already in the cart." });
+            }
 
-            ShoppingCartMachine machine = new ShoppingCartMachine
+            var shoppingCartMachine = new ShoppingCartMachine
             {
                 ShoppingCartId = shoppingCart.Id,
                 MachineId = machineId
             };
 
-            dbContext.ShoppingCartMachineConnections.Add(machine);
-            dbContext.SaveChanges();
-
-
+            dbContext.ShoppingCartMachineConnections.Add(shoppingCartMachine);
+            await dbContext.SaveChangesAsync();
 
             return Ok(new { message = "Machine added to cart." });
-
         }
-        /*com login
-        [HttpGet]
-        public async Task<IActionResult> GetShoppingCart()
-        {
-            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-            // Implementação para obter o carrinho com base no `userId` do token
-        }
-        */
-
     }
 }
