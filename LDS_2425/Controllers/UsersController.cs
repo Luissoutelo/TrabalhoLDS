@@ -69,6 +69,13 @@ namespace LDS_2425.Controllers
 
             dbContext.Users.Add(user);
             dbContext.SaveChanges();
+
+            ShoppingCart card = new ShoppingCart
+            {
+                userId = user.Id
+            };
+            dbContext.ShoppingCarts.Add(card);
+            dbContext.SaveChanges();
             return CreatedAtAction(nameof(Add), new {id = user.Id}, user);
         }
 

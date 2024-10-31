@@ -48,5 +48,6 @@ namespace LDS_2425.Data
             // Passa se for venda de máquina ou se for listagem com contrato
             return true;
         }
+
     }
 }

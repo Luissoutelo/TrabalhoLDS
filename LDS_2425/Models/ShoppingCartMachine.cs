@@ -1,4 +1,5 @@
-﻿namespace LDS_2425.Models
+﻿
+namespace LDS_2425.Models
 {
     public class ShoppingCartMachine
     {
@@ -7,5 +8,7 @@
         public required int ShoppingCartId { get; set; }
 
         public required int MachineId { get; set; }
+
+       
     }
 }
