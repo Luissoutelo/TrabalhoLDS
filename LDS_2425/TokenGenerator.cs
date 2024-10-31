@@ -7,7 +7,7 @@ namespace LDS_2425
 {
     public class TokenGenerator
     {
-        public string GenerateToken(string email)
+        public string GenerateToken(string email, string type)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.UTF8.GetBytes("your-longer-super-secret-key-123456789");
@@ -16,7 +16,8 @@ namespace LDS_2425
             {
                 new(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                 new(JwtRegisteredClaimNames.Sub, email),
-                new(JwtRegisteredClaimNames.Email, email)
+                new(JwtRegisteredClaimNames.Email, email),
+                new(ClaimTypes.Role, type)
             };
 
             var tokenDescriptor = new SecurityTokenDescriptor

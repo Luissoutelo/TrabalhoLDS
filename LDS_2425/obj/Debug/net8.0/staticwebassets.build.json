@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "iYTRwBQQ3W9WdneKZ/SI5miD1BOdSR0LDByjvZWLvOQ=",
+  "Hash": "kOpj0M9O4TiQmGXwg2KIEDrNiO+WsDQC0yDLDcBMogg=",
   "Source": "LDS_2425",
   "BasePath": "_content/LDS_2425",
   "Mode": "Default",
@@ -15,25 +15,5 @@
       "Pattern": "**"
     }
   ],
-  "Assets": [
-    {
-      "Identity": "C:\\Users\\joaoc\\Source\\Repos\\TrabalhoLDS\\LDS_2425\\wwwroot\\swagger-ui-token.js",
-      "SourceId": "LDS_2425",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\joaoc\\Source\\Repos\\TrabalhoLDS\\LDS_2425\\wwwroot\\",
-      "BasePath": "_content/LDS_2425",
-      "RelativePath": "swagger-ui-token.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\swagger-ui-token.js"
-    }
-  ]
+  "Assets": []
 }

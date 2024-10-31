@@ -89,7 +89,9 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         };
     });
 
-builder.Services.AddAuthorization();
+builder.Services.AddAuthorizationBuilder()
+    .AddPolicy("AdminOnly", policy => policy.RequireRole("Administrator"))
+    .AddPolicy("UserOnly", policy => policy.RequireRole("User"));
 
 builder.Services.AddSingleton<TokenGenerator>();
 

@@ -33,13 +33,20 @@ namespace LDS_2425.Controllers
                 return Unauthorized("Invalid email or password.");
             }
 
+            var user = dbContext.Users.FirstOrDefault(u => u.Email == loginRequest.Email);
+
+            if (user == null)
+            {
+                return Unauthorized("Invalid email.");
+            }
+
             // Generate token if credentials are valid
-            var token = tokenGenerator.GenerateToken(loginRequest.Email);
+            var token = tokenGenerator.GenerateToken(loginRequest.Email, user.Type);
             return Ok(new { Token = token });
         }
 
         // GET : api/users
-        [Authorize]
+        [Authorize(Roles = "Administrator")]
         [HttpGet]
         public ActionResult<IEnumerable<User>> GetUsers()
         {
@@ -52,7 +59,7 @@ namespace LDS_2425.Controllers
         }
 
         // GET : api/users{id}
-        [Authorize]
+        [Authorize(Roles = "Administrator")]
         [HttpGet("{id}")]
         public ActionResult<IEnumerable<User>> GetUser(int id)
         {
@@ -91,6 +98,11 @@ namespace LDS_2425.Controllers
 
             // Hash the password and set it on the user object
             user.PasswordHash = passwordHasher.HashPassword(user, password);
+
+            if (string.IsNullOrEmpty(user.Type))
+            {
+                user.Type = "User";
+            }
 
             // Add the user to the database
             dbContext.Users.Add(user);
@@ -132,7 +144,7 @@ namespace LDS_2425.Controllers
         }
 
         // DELETE : api/users/{id}
-        [Authorize]
+        [Authorize(Roles = "Administrator")]
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {

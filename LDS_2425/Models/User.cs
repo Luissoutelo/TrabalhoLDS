@@ -12,6 +12,6 @@
 
         public required int PhoneNumber { get; set; }
 
-        public required string type { get; set; }
+        public required string Type { get; set; } = "User";
     }
 }
