@@ -100,7 +100,6 @@ namespace LDS_2425.Controllers
         }
 
         // PUT : api/users/{id}
-        [Authorize]
         [HttpPut("{id}")]
         public IActionResult Update(int id, User user)
         {
