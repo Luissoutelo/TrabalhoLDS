@@ -1,11 +1,19 @@
 {
   "Version": 1,
-  "Hash": "vRnXMojC2Ck3fojSHtkP3vMnEB/lGaVyaIVS1Oc/atg=",
+  "Hash": "kOpj0M9O4TiQmGXwg2KIEDrNiO+WsDQC0yDLDcBMogg=",
   "Source": "LDS_2425",
   "BasePath": "_content/LDS_2425",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "LDS_2425\\wwwroot",
+      "Source": "LDS_2425",
+      "ContentRoot": "C:\\Users\\joaoc\\Source\\Repos\\TrabalhoLDS\\LDS_2425\\wwwroot\\",
+      "BasePath": "_content/LDS_2425",
+      "Pattern": "**"
+    }
+  ],
   "Assets": []
 }

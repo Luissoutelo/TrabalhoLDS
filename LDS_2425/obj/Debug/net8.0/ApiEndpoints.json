@@ -405,6 +405,11 @@
         "Name": "user",
         "Type": "LDS_2425.Models.User",
         "IsRequired": true
+      },
+      {
+        "Name": "password",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": [
@@ -585,5 +590,21 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "LDS_2425.Controllers.UsersController",
+    "Method": "Login",
+    "RelativePath": "api/Users/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "loginRequest",
+        "Type": "LDS_2425.LoginRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

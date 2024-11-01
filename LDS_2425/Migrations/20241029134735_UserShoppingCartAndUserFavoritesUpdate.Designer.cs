@@ -4,6 +4,7 @@ using LDS_2425.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LDS_2425.Migrations
 {
     [DbContext(typeof(MachineHubContext))]
-    partial class MachineHubContextModelSnapshot : ModelSnapshot
+    [Migration("20241029134735_UserShoppingCartAndUserFavoritesUpdate")]
+    partial class UserShoppingCartAndUserFavoritesUpdate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -289,7 +292,7 @@ namespace LDS_2425.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("userId")
+                    b.Property<int>("UserId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -317,6 +320,8 @@ namespace LDS_2425.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("FavoritesPageId");
+
+                    b.HasIndex("ShoppingCartId");
 
                     b.ToTable("ShoppingCartLoan_ListingConnections");
                 });
@@ -363,14 +368,14 @@ namespace LDS_2425.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("PasswordHash")
+                    b.Property<string>("Password")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("PhoneNumber")
                         .HasColumnType("int");
 
-                    b.Property<string>("Type")
+                    b.Property<string>("type")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -384,6 +389,12 @@ namespace LDS_2425.Migrations
                     b.HasOne("LDS_2425.Models.FavoritesPage", null)
                         .WithMany("LoanListings")
                         .HasForeignKey("FavoritesPageId");
+
+                    b.HasOne("LDS_2425.Models.ShoppingCart", null)
+                        .WithMany("LoanListings")
+                        .HasForeignKey("ShoppingCartId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("LDS_2425.Models.ShoppingCartMachine", b =>
@@ -408,6 +419,8 @@ namespace LDS_2425.Migrations
 
             modelBuilder.Entity("LDS_2425.Models.ShoppingCart", b =>
                 {
+                    b.Navigation("LoanListings");
+
                     b.Navigation("Machines");
                 });
 #pragma warning restore 612, 618

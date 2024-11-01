@@ -1,5 +1,4 @@
-﻿
-namespace LDS_2425.Models
+﻿namespace LDS_2425.Models
 {
     public class User
     {
@@ -13,6 +12,6 @@ namespace LDS_2425.Models
 
         public required int PhoneNumber { get; set; }
 
-        public required string type { get; set; }
+        public required string Type { get; set; } = "User";
     }
 }

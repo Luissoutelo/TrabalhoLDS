@@ -1,6 +1,8 @@
 ﻿using LDS_2425.Data;
 using LDS_2425.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,10 +13,40 @@ namespace LDS_2425.Controllers
     public class UsersController : ControllerBase
     {
         private readonly MachineHubContext dbContext;
+        private readonly IPasswordHasher<User> passwordHasher;
+        private readonly TokenGenerator tokenGenerator;
 
-        public UsersController(MachineHubContext dbContext) => this.dbContext = dbContext;
+        public UsersController(MachineHubContext dbContext, IPasswordHasher<User> passwordHasher, TokenGenerator tokenGenerator)
+        {
+            this.dbContext = dbContext;
+            this.passwordHasher = passwordHasher;
+            this.tokenGenerator = tokenGenerator;
+        }
+
+        [HttpPost("login")]
+        public IActionResult Login([FromBody] LoginRequest loginRequest)
+        {
+            var isValidUser = dbContext.ValidateUserCredentials(loginRequest);
+
+            if (!isValidUser)
+            {
+                return Unauthorized("Invalid email or password.");
+            }
+
+            var user = dbContext.Users.FirstOrDefault(u => u.Email == loginRequest.Email);
+
+            if (user == null)
+            {
+                return Unauthorized("Invalid email.");
+            }
+
+            // Generate token if credentials are valid
+            var token = tokenGenerator.GenerateToken(loginRequest.Email, user.Type);
+            return Ok(new { Token = token });
+        }
 
         // GET : api/users
+        [Authorize(Roles = "Administrator")]
         [HttpGet]
         public ActionResult<IEnumerable<User>> GetUsers()
         {
@@ -27,6 +59,7 @@ namespace LDS_2425.Controllers
         }
 
         // GET : api/users{id}
+        [Authorize(Roles = "Administrator")]
         [HttpGet("{id}")]
         public ActionResult<IEnumerable<User>> GetUser(int id)
         {
@@ -47,36 +80,35 @@ namespace LDS_2425.Controllers
 
         // POST : api/users
         [HttpPost]
-        public ActionResult<User> Add(User user)
+        public ActionResult<User> Add(User user, string password)
         {
-            // Vê se email existe
-            var emailUsed = dbContext.Users
-                .FirstOrDefault(u => u.Email == user.Email);
-
+            // Check if email already exists
+            var emailUsed = dbContext.Users.FirstOrDefault(u => u.Email == user.Email);
             if (emailUsed != null)
             {
                 return Conflict(new { message = "Email is already in use." });
             }
 
-            // Vê se número de telemóvel existe
-            var phoneNumberUsed = dbContext.Users
-                .FirstOrDefault(u => u.PhoneNumber == user.PhoneNumber);
-
+            // Check if phone number already exists
+            var phoneNumberUsed = dbContext.Users.FirstOrDefault(u => u.PhoneNumber == user.PhoneNumber);
             if (phoneNumberUsed != null)
             {
                 return Conflict(new { message = "Phone number is already in use." });
             }
 
+            // Hash the password and set it on the user object
+            user.PasswordHash = passwordHasher.HashPassword(user, password);
+
+            if (string.IsNullOrEmpty(user.Type))
+            {
+                user.Type = "User";
+            }
+
+            // Add the user to the database
             dbContext.Users.Add(user);
             dbContext.SaveChanges();
 
-            ShoppingCart card = new ShoppingCart
-            {
-                userId = user.Id
-            };
-            dbContext.ShoppingCarts.Add(card);
-            dbContext.SaveChanges();
-            return CreatedAtAction(nameof(Add), new {id = user.Id}, user);
+            return CreatedAtAction(nameof(Add), new { id = user.Id }, user);
         }
 
         // PUT : api/users/{id}
@@ -112,6 +144,7 @@ namespace LDS_2425.Controllers
         }
 
         // DELETE : api/users/{id}
+        [Authorize(Roles = "Administrator")]
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
@@ -133,6 +166,7 @@ namespace LDS_2425.Controllers
         }
 
         // GET : api/users{id}
+        [Authorize]
         [HttpGet("{id}/purchasesCount")]
         public ActionResult<int> GetPurchaseCountForUser(int id)
         {
@@ -147,6 +181,7 @@ namespace LDS_2425.Controllers
         }
 
         // GET : api/users{id}
+        [Authorize]
         [HttpGet("{id}/loanCount")]
         public ActionResult<int> GetMachinesLoanedCountForUser(int id)
         {
@@ -161,6 +196,7 @@ namespace LDS_2425.Controllers
         }
 
         // GET : api/users{id}
+        [Authorize]
         [HttpGet("{id}/purchaseReceipts")]
         public ActionResult<IEnumerable<User>> GetPurchaseReceiptsForUser(int id)
         {
@@ -182,6 +218,7 @@ namespace LDS_2425.Controllers
         }
 
         // GET : api/users{id}
+        [Authorize]
         [HttpGet("{id}/loanReceipts")]
         public ActionResult<IEnumerable<User>> GetLoanReceiptsForUser(int id)
         {
@@ -201,28 +238,5 @@ namespace LDS_2425.Controllers
 
             return Ok(receipts);
         }
-
-        /**
-        // GET : api/users{id}
-        [HttpGet("{id}/contracts")]
-        public ActionResult<IEnumerable<User>> GetContractsForUser(int id)
-        {
-            if (dbContext.Users == null)
-            {
-                return NotFound();
-            }
-
-            var contracts = dbContext.Contracts
-                .Where(c => Loan_Listing.GetMachine(c.ListingId).OwnerId == id || Loan_Listing(c.ListingId).UserId == id)
-                .ToList();
-
-            if (contracts == null)
-            {
-                return BadRequest();
-            }
-
-            return Ok(receipts);
-        }
-        */
     }
 }
