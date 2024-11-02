@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ReceiptControllerTest")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a6cf53506689f0615c0371572643813c0a16d16d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b1ee95d3aed87a4e57d4fb1e60598c1146e2da54")]
 [assembly: System.Reflection.AssemblyProductAttribute("ReceiptControllerTest")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ReceiptControllerTest")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

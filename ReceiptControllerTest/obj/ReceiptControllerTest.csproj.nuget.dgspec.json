@@ -4,14 +4,14 @@
     "C:\\Users\\vasco\\Documents\\GitHub\\TrabalhoLDS\\ReceiptControllerTest\\ReceiptControllerTest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vasco\\Documents\\GitHub\\TrabalhoLDS\\ReceiptControllerTest\\ReceiptControllerTest.csproj": {
+    "C:\\Users\\vasco\\Documents\\GitHub\\TrabalhoLDS\\LDS_2425\\LDS_2425.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vasco\\Documents\\GitHub\\TrabalhoLDS\\ReceiptControllerTest\\ReceiptControllerTest.csproj",
-        "projectName": "ReceiptControllerTest",
-        "projectPath": "C:\\Users\\vasco\\Documents\\GitHub\\TrabalhoLDS\\ReceiptControllerTest\\ReceiptControllerTest.csproj",
+        "projectUniqueName": "C:\\Users\\vasco\\Documents\\GitHub\\TrabalhoLDS\\LDS_2425\\LDS_2425.csproj",
+        "projectName": "LDS_2425",
+        "projectPath": "C:\\Users\\vasco\\Documents\\GitHub\\TrabalhoLDS\\LDS_2425\\LDS_2425.csproj",
         "packagesPath": "C:\\Users\\vasco\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vasco\\Documents\\GitHub\\TrabalhoLDS\\ReceiptControllerTest\\obj\\",
+        "outputPath": "C:\\Users\\vasco\\Documents\\GitHub\\TrabalhoLDS\\LDS_2425\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\vasco\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -46,6 +46,112 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Azure.Identity": {
+              "target": "Package",
+              "version": "[1.13.1, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.10, )"
+            },
+            "Microsoft.AspNetCore.Cors": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.10, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.9.0, )"
+            },
+            "System.Formats.Asn1": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\vasco\\Documents\\GitHub\\TrabalhoLDS\\ReceiptControllerTest\\ReceiptControllerTest.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\vasco\\Documents\\GitHub\\TrabalhoLDS\\ReceiptControllerTest\\ReceiptControllerTest.csproj",
+        "projectName": "ReceiptControllerTest",
+        "projectPath": "C:\\Users\\vasco\\Documents\\GitHub\\TrabalhoLDS\\ReceiptControllerTest\\ReceiptControllerTest.csproj",
+        "packagesPath": "C:\\Users\\vasco\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\vasco\\Documents\\GitHub\\TrabalhoLDS\\ReceiptControllerTest\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\vasco\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\vasco\\Documents\\GitHub\\TrabalhoLDS\\LDS_2425\\LDS_2425.csproj": {
+                "projectPath": "C:\\Users\\vasco\\Documents\\GitHub\\TrabalhoLDS\\LDS_2425\\LDS_2425.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
             "MSTest.TestAdapter": {
               "target": "Package",
               "version": "[3.1.1, )"
@@ -53,6 +159,10 @@
             "MSTest.TestFramework": {
               "target": "Package",
               "version": "[3.1.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[8.0.10, )"
             },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",

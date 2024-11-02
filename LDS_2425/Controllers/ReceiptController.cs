@@ -49,18 +49,22 @@ namespace LDS_2425.Controllers
             if (receipt == null)
             {
                 return BadRequest("Contrato nao pode ser nulo.");
+            }
 
-
-                // Validar se Loan_ListingId é um Id válido na tabela Loan_Listings (se estiver presente)
-                if (receipt.Loan_ListingId.HasValue)
+                if (receipt.Loan_ListingId <= 0)
                 {
+                    return BadRequest("Loan_ListingId deve ser maior que zero.");
+                }
+
+
+
                     bool listingExists = dbContext.Loan_Listings.Any(l => l.Id == receipt.Loan_ListingId.Value);
                     if (!listingExists)
                     {
                         return BadRequest($"Loan_ListingId {receipt.Loan_ListingId.Value} não encontrado. Certifique-se de que o Loan_ListingId seja válido.");
                     }
-                }
-            }
+                
+            
 
             dbContext.Receipts.Add(receipt);
             dbContext.SaveChanges();
