@@ -45,13 +45,69 @@ namespace LDS_2425.Controllers
             return Ok(machine);
         }
 
+        // GET : api/machines{id}
+        [HttpGet("{id}/receiptsCount")]
+        public ActionResult<int> GetPurchaseCountForMachine(int id)
+        {
+            if (dbContext.Receipts == null)
+            {
+                return NotFound();
+            }
+
+            var receipts = dbContext.Receipts.Count(r => r.Id == id);
+
+            return Ok(receipts);
+        }
+
+        //GET: api/Machines/category/{categoryId}
+        [HttpGet("category/{categoryId}")]
+        public ActionResult<IEnumerable<Machine>> GetMachineByCategory(int categoryId)
+        {
+            if (dbContext.Machines == null)
+                return NotFound();
+
+            var machines = dbContext.Machines.Where(m => m.CategoryId == categoryId).ToList();
+
+            if (machines == null)
+                return NotFound();
+
+            return Ok(machines);
+        }
+
+        // GET : api/machines{name}
+        [HttpGet("machineName/{name}")]
+        public ActionResult<IEnumerable<Machine>> GetmachineByName(string name)
+        {
+            if (dbContext.Machines == null)
+            {
+                return NotFound();
+            }
+
+            var machine = dbContext.Machines.FirstOrDefault(x => x.Name == name);
+
+            if (machine == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(machine);
+        }
+
         // POST : api/machines
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public ActionResult<Machine> Add(Machine machine)
         {
             if (machine == null)
             {
                 return BadRequest();
+            }
+
+            bool categoryExists = dbContext.Categories.Any(c => c.Id == machine.CategoryId);
+
+            if (!categoryExists)
+            {
+                return BadRequest($"Category with Id {machine.CategoryId} doesn't exist.");
             }
 
             dbContext.Machines.Add(machine);
@@ -92,20 +148,6 @@ namespace LDS_2425.Controllers
             dbContext.Machines.Remove(machine);
             dbContext.SaveChanges();
             return NoContent();
-        }
-
-        // GET : api/machines{id}
-        [HttpGet("{id}/receiptsCount")]
-        public ActionResult<int> GetPurchaseCountForMachine(int id)
-        {
-            if (dbContext.Receipts == null)
-            {
-                return NotFound();
-            }
-
-            var receipts = dbContext.Receipts.Count(r => r.Id == id);
-
-            return Ok(receipts);
         }
     }
 }
