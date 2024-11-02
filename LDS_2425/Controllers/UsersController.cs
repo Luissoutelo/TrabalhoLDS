@@ -108,6 +108,12 @@ namespace LDS_2425.Controllers
             dbContext.Users.Add(user);
             dbContext.SaveChanges();
 
+            ShoppingCart sc = new() {userId = user.Id};
+            FavoritesPage fp = new() { UserId = user.Id };
+            
+            dbContext.ShoppingCarts.Add(sc);
+            dbContext.FavoritesPages.Add(fp);
+            dbContext.SaveChanges();
             return CreatedAtAction(nameof(Add), new { id = user.Id }, user);
         }
 
