@@ -96,9 +96,54 @@ namespace LDS_2425.Controllers
             await dbContext.SaveChangesAsync();
             return Ok(new { Message = "Machine added to favorites successfully.", FavoriteMachine = request.MachineId });
         }
+        [HttpDelete("{userId}/removeSellMachine/{machineId}")]
+        public async Task<ActionResult> RemoveFromFavoritesMachine(int userId, int machineId)
+        {
+            var favoritePage = await dbContext.FavoritesPages.FirstOrDefaultAsync(x => x.UserId == userId);
+            if (favoritePage == null)
+            {
+                return NotFound("There is no favorite page for this user");
+            }
 
-        
-        
+            var favoriteMachine = await dbContext.FavoritesPageMachines
+                .FirstOrDefaultAsync(fpm => fpm.FavoritesPageId == favoritePage.Id && fpm.MachineId == machineId);
+
+            if (favoriteMachine == null)
+            {
+                return NotFound("Machine not found in user's favorites");
+            }
+
+            dbContext.FavoritesPageMachines.Remove(favoriteMachine);
+            await dbContext.SaveChangesAsync();
+
+            return Ok(new { Message = "Machine removed from favorites successfully.", RemovedMachineId = machineId });
+        }
+        [HttpDelete("{userId}/removeLoanMachine/{loanListingId}")]
+        public async Task<ActionResult> RemoveFromFavoritesLoanListing(int userId, int loanListingId)
+        {
+            var favoritePage = await dbContext.FavoritesPages.FirstOrDefaultAsync(x => x.UserId == userId);
+            if (favoritePage == null)
+            {
+                return NotFound("There is no favorite page for this user");
+            }
+
+            var favoriteLoanListing = await dbContext.FavoritesPageLoan_Listings
+                .FirstOrDefaultAsync(fpl => fpl.FavoritesPageId == favoritePage.Id && fpl.Loan_ListingId == loanListingId);
+
+            if (favoriteLoanListing == null)
+            {
+                return NotFound("Loan listing not found in user's favorites");
+            }
+
+            dbContext.FavoritesPageLoan_Listings.Remove(favoriteLoanListing);
+            await dbContext.SaveChangesAsync();
+
+            return Ok(new { Message = "Loan listing removed from favorites successfully.", RemovedLoanListingId = loanListingId });
+        }
+
+
+
+
 
 
     }

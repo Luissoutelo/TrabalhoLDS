@@ -229,6 +229,48 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "LDS_2425.Controllers.FavoritePageController",
+    "Method": "RemoveFromFavoritesLoanListing",
+    "RelativePath": "api/FavoritePage/{userId}/removeLoanMachine/{loanListingId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "loanListingId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LDS_2425.Controllers.FavoritePageController",
+    "Method": "RemoveFromFavoritesMachine",
+    "RelativePath": "api/FavoritePage/{userId}/removeSellMachine/{machineId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "machineId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "LDS_2425.Controllers.MachinesController",
     "Method": "GetMachines",
     "RelativePath": "api/Machines",
