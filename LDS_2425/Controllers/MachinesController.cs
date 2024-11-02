@@ -1,5 +1,6 @@
 ﻿using LDS_2425.Data;
 using LDS_2425.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -46,6 +47,7 @@ namespace LDS_2425.Controllers
         }
 
         // GET : api/machines{id}
+        [Authorize(Roles = "Administrator")]
         [HttpGet("{id}/receiptsCount")]
         public ActionResult<int> GetPurchaseCountForMachine(int id)
         {
@@ -94,6 +96,7 @@ namespace LDS_2425.Controllers
         }
 
         // POST : api/machines
+        [Authorize(Roles = "Administrator")]
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public ActionResult<Machine> Add(Machine machine)
@@ -116,6 +119,7 @@ namespace LDS_2425.Controllers
         }
 
         // PUT : api/machines/{id}
+        [Authorize(Roles = "Administrator")]
         [HttpPut("{id}")]
         public IActionResult Update(int id, Machine machine)
         {
@@ -130,6 +134,7 @@ namespace LDS_2425.Controllers
         }
 
         // DELETE : api/machines/{id}
+        [Authorize(Roles = "Administrator")]
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
