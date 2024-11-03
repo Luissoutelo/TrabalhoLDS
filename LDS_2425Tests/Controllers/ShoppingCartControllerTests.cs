@@ -62,8 +62,6 @@ namespace LDS_2425.Controllers.Tests
             var userId = 123; 
 
             
-
-            
             var result = await controller.GetMachineFromCart(userId);
 
             

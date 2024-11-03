@@ -61,15 +61,17 @@ namespace LDS_2425.Controllers
         {
             var favouritePage=await dbContext.FavoritesPages.FirstOrDefaultAsync(x => x.UserId == userId);
             if (favouritePage == null)
-                if (favouritePage == null)
                 {
                     return NotFound("There is no favourite page for this user");
                 }
-            FavoritesPageMachine favoritesPageMachine = new FavoritesPageMachine
+            var machineExists = await dbContext.Machines.FirstOrDefaultAsync(M => M.Id == request.MachineId);
+
+                FavoritesPageMachine favoritesPageMachine = new FavoritesPageMachine
             {
                 FavoritesPageId = favouritePage.Id,
                  MachineId = request.MachineId
             };
+
 
             dbContext.FavoritesPageMachines.Add(favoritesPageMachine);
             await dbContext.SaveChangesAsync();
