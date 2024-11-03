@@ -115,6 +115,18 @@ namespace LDS_2425.Controllers
 
             var loanMachine = dbContext.Loan_Listings.Find(id);
 
+            if (loanMachine == null)
+                return NotFound();
+
+            bool isMachineInUse = dbContext.Loan_Listings
+                .Any(m => m.Id == id &&
+                          m.StartDate <= loan_Listing.EndDate &&
+                          m.EndDate >= loan_Listing.StartDate);
+
+            if (isMachineInUse)
+                return BadRequest("The machine is already in use during that date");
+
+
             loanMachine.Id = loanMachine.Id;
             loanMachine.Name = loanMachine.Name;
             loanMachine.Brand = loanMachine.Brand;
