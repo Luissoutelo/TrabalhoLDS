@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "gZteMiIHJ9Npu8bbZSRbsRHL36uN5s8uw6/q23mGnsI=",
+  "Hash": "StiFQpffGylZrg2hCSqWeQvJzB+nTsakbFKyisnViQI=",
   "Source": "LDS_2425",
   "BasePath": "_content/LDS_2425",
   "Mode": "Default",
@@ -10,7 +10,7 @@
     {
       "Name": "LDS_2425\\wwwroot",
       "Source": "LDS_2425",
-      "ContentRoot": "C:\\Users\\carlo\\Documents\\estg\\lds\\LDS_Grupo16\\TrabalhoLDS\\LDS_2425\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\luiss\\source\\repos\\Luissoutelo\\TrabalhoLDS\\LDS_2425\\wwwroot\\",
       "BasePath": "_content/LDS_2425",
       "Pattern": "**"
     }

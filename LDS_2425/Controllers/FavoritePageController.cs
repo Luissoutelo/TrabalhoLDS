@@ -16,8 +16,8 @@ namespace LDS_2425.Controllers
         public async Task<ActionResult<IEnumerable<FavoritesPage>>> GetFavorites(int userId)
         {
             var favoritesPage = await dbContext.FavoritesPages
-                .Include(fp => fp.Machines) // Inclui máquinas
-                .Include(fp => fp.LoanListings) // Inclui anúncios de aluguel
+                .Include(fp => fp.Machines) 
+                .Include(fp => fp.LoanListings) 
                 .FirstOrDefaultAsync(fp => fp.UserId == userId);
 
             if (favoritesPage == null)
