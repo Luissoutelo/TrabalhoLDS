@@ -428,3 +428,5 @@ C:\Users\carlo\Documents\estg\lds\LDS_Grupo16\TrabalhoLDS\LDS_2425\obj\Debug\net
 C:\Users\carlo\Documents\estg\lds\LDS_Grupo16\TrabalhoLDS\LDS_2425\obj\Debug\net8.0\LDS_2425.genruntimeconfig.cache
 C:\Users\carlo\Documents\estg\lds\LDS_Grupo16\TrabalhoLDS\LDS_2425\obj\Debug\net8.0\ref\LDS_2425.dll
 C:\Users\carlo\Documents\estg\lds\LDS_Grupo16\TrabalhoLDS\LDS_2425\bin\Debug\net8.0\LDS_2425.staticwebassets.runtime.json
+C:\Users\carlo\Documents\estg\lds\LDS_Grupo16\TrabalhoLDS\LDS_2425\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\carlo\Documents\estg\lds\LDS_Grupo16\TrabalhoLDS\LDS_2425\bin\Debug\net8.0\System.ClientModel.dll

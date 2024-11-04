@@ -41,6 +41,7 @@ namespace LDS_2425.Controllers
             return Ok(loanListing);
         }
 
+        [Authorize(Roles = "User")]
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public ActionResult<Loan_Listing> Add(Loan_Listing loan_Listing)
@@ -55,6 +56,11 @@ namespace LDS_2425.Controllers
                 return BadRequest($"Category with Id {loan_Listing.CategoryId} doesn't exist.");
             }
 
+            if (loan_Listing.YearManufacture > loan_Listing.DateListed)
+                return BadRequest("Year of Manufacture has to be before Date listed");
+
+
+
             /*var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
             if (userId == null)
                 return Unauthorized("User is not authenticated.");
@@ -63,9 +69,10 @@ namespace LDS_2425.Controllers
 
             dbContext.Loan_Listings.Add(loan_Listing);
             dbContext.SaveChanges();
-            return CreatedAtAction(nameof(Add), new {id = loan_Listing.Id}, loan_Listing);
+            return CreatedAtAction(nameof(Add), new { id = loan_Listing.Id }, loan_Listing);
         }
 
+        [Authorize(Roles = "User")]
         [HttpPut("{id}")]
         public IActionResult Update(int id, Loan_Listing loan_Listing)
         {
@@ -77,6 +84,7 @@ namespace LDS_2425.Controllers
             return NoContent();
         }
 
+        [Authorize(Roles = "User")]
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
@@ -117,6 +125,12 @@ namespace LDS_2425.Controllers
 
             if (loanMachine == null)
                 return NotFound();
+
+            bool machineDate = dbContext.Loan_Listings
+                .Any(m => m.Id == id &&
+                         m.StartDate >= loan_Listing.DateListed);
+            if (machineDate)
+                return BadRequest("Start date needs to be after listed date");
 
             bool isMachineInUse = dbContext.Loan_Listings
                 .Any(m => m.Id == id &&
