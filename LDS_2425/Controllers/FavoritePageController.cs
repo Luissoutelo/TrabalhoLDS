@@ -16,8 +16,8 @@ namespace LDS_2425.Controllers
         public async Task<ActionResult<IEnumerable<FavoritesPage>>> GetFavorites(int userId)
         {
             var favoritesPage = await dbContext.FavoritesPages
-                .Include(fp => fp.Machines) // Inclui máquinas
-                .Include(fp => fp.LoanListings) // Inclui anúncios de aluguel
+                .Include(fp => fp.Machines) 
+                .Include(fp => fp.LoanListings) 
                 .FirstOrDefaultAsync(fp => fp.UserId == userId);
 
             if (favoritesPage == null)
@@ -61,15 +61,17 @@ namespace LDS_2425.Controllers
         {
             var favouritePage=await dbContext.FavoritesPages.FirstOrDefaultAsync(x => x.UserId == userId);
             if (favouritePage == null)
-                if (favouritePage == null)
                 {
                     return NotFound("There is no favourite page for this user");
                 }
-            FavoritesPageMachine favoritesPageMachine = new FavoritesPageMachine
+            var machineExists = await dbContext.Machines.FirstOrDefaultAsync(M => M.Id == request.MachineId);
+
+                FavoritesPageMachine favoritesPageMachine = new FavoritesPageMachine
             {
                 FavoritesPageId = favouritePage.Id,
                  MachineId = request.MachineId
             };
+
 
             dbContext.FavoritesPageMachines.Add(favoritesPageMachine);
             await dbContext.SaveChangesAsync();

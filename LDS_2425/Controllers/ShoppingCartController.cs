@@ -47,7 +47,7 @@ namespace LDS_2425.Controllers
         [HttpPost("{userId}")]
         public async Task<ActionResult<ShoppingCartMachine>> AddMachineToCart(int userId, [FromBody] AddMachineToCartRequest request)
         {
-            // Obtém o carrinho do banco de dados
+            
             var shoppingCart = await dbContext.ShoppingCarts
                 .Include(sc => sc.Machines)
                 .FirstOrDefaultAsync(c => c.userId == userId);
@@ -57,7 +57,7 @@ namespace LDS_2425.Controllers
                 return NotFound(new { message = "Shopping cart not found." });
             }
 
-            // Verifica se a máquina já está no carrinho
+           
             var machineInCart = shoppingCart.Machines
                 .FirstOrDefault(sm => sm.MachineId == request.MachineId);
 
@@ -66,7 +66,6 @@ namespace LDS_2425.Controllers
                 return BadRequest(new { message = "Machine is already in the cart." });
             }
 
-            // Cria um novo objeto de conexão para a máquina no carrinho
             var shoppingCartMachine = new ShoppingCartMachine
             {
                 ShoppingCartId = shoppingCart.Id,
