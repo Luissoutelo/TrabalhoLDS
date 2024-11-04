@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vasco\\Documents\\GitHub\\TrabalhoLDS\\LDS_2425\\LDS_2425.csproj": {}
+    "C:\\Users\\carlo\\Documents\\estg\\lds\\LDS_Grupo16\\TrabalhoLDS\\LDS_2425\\LDS_2425.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vasco\\Documents\\GitHub\\TrabalhoLDS\\LDS_2425\\LDS_2425.csproj": {
+    "C:\\Users\\carlo\\Documents\\estg\\lds\\LDS_Grupo16\\TrabalhoLDS\\LDS_2425\\LDS_2425.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vasco\\Documents\\GitHub\\TrabalhoLDS\\LDS_2425\\LDS_2425.csproj",
+        "projectUniqueName": "C:\\Users\\carlo\\Documents\\estg\\lds\\LDS_Grupo16\\TrabalhoLDS\\LDS_2425\\LDS_2425.csproj",
         "projectName": "LDS_2425",
-        "projectPath": "C:\\Users\\vasco\\Documents\\GitHub\\TrabalhoLDS\\LDS_2425\\LDS_2425.csproj",
-        "packagesPath": "C:\\Users\\vasco\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vasco\\Documents\\GitHub\\TrabalhoLDS\\LDS_2425\\obj\\",
+        "projectPath": "C:\\Users\\carlo\\Documents\\estg\\lds\\LDS_Grupo16\\TrabalhoLDS\\LDS_2425\\LDS_2425.csproj",
+        "packagesPath": "C:\\Users\\carlo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\carlo\\Documents\\estg\\lds\\LDS_Grupo16\\TrabalhoLDS\\LDS_2425\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\vasco\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\carlo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -46,18 +50,6 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "Azure.Identity": {
-              "target": "Package",
-              "version": "[1.13.1, )"
-            },
-            "Microsoft.AspNetCore.Authentication.JwtBearer": {
-              "target": "Package",
-              "version": "[8.0.10, )"
-            },
-            "Microsoft.AspNetCore.Cors": {
-              "target": "Package",
-              "version": "[2.2.0, )"
-            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -76,11 +68,7 @@
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.9.0, )"
-            },
-            "System.Formats.Asn1": {
-              "target": "Package",
-              "version": "[8.0.1, )"
+              "version": "[6.4.0, )"
             }
           },
           "imports": [
@@ -102,7 +90,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
