@@ -183,8 +183,14 @@ namespace LDS_2425Tests.Controllers
         [Fact]
         public async Task Delete_ShouldReturnOk_WhenTheCategoryExists()
         {
+            //Arrange
+            var id = 2;
+            var existingCategory = new Category { Id = id, Name = "Teste2" };
+            dbContext.Add(existingCategory);
+            dbContext.SaveChanges();
+
             //Act
-            var result = controller.Delete(1);
+            var result = controller.Delete(2);
 
             //Assert
             Assert.IsType<NoContentResult>(result);
@@ -194,7 +200,7 @@ namespace LDS_2425Tests.Controllers
         public async Task Delete_ShouldReturnNotFoundObject_WhenTheCategoryIdIsInvalid()
         {
             //Act
-            var result = controller.Delete(2);
+            var result = controller.Delete(9999);
 
             //Assert
             Assert.IsType<NotFoundResult>(result);
@@ -203,15 +209,20 @@ namespace LDS_2425Tests.Controllers
         [Fact]
         public async Task GetMachineCountForCategory_ShouldReturnOk_WhenCategoryExists()
         {
+            //Arrange
+            var id = 2;
+            var existingCategory = new Category { Id = id, Name = "Teste2" };
+            dbContext.Add(existingCategory);
+            dbContext.SaveChanges();
+
             // Act
-            var result = await controller.GetMachineCountForCategory(1);
+            var result = await controller.GetMachineCountForCategory(id);
 
             // Assert
             Assert.IsType<ActionResult<int>>(result);
 
             var okResult = result.Result as OkObjectResult;
 
-            Assert.NotNull(okResult);
             var machineCount = (int)okResult!.Value!;
 
             Assert.True(machineCount >= 0);
