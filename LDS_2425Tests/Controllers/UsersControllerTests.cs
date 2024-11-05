@@ -16,7 +16,7 @@ namespace LDS_2425Tests.Controllers
         {
 
             var options = new DbContextOptionsBuilder<MachineHubContext>()
-                .UseInMemoryDatabase("TestDatabase")
+                .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString())
                 .Options;
 
             dbContext = new MachineHubContext(options, new PasswordHasher<User>());
