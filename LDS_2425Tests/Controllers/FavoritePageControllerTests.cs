@@ -19,7 +19,7 @@ namespace LDS_2425.Controllers.Tests
         public FavoritesPageControllerTests()
         {
             var options = new DbContextOptionsBuilder<MachineHubContext>()
-                .UseInMemoryDatabase("TestFavoritesDatabase")
+                .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString())
                 .Options;
 
             dbContext = new MachineHubContext(options, new PasswordHasher<User>());
