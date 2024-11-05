@@ -170,15 +170,15 @@ namespace LDS_2425.Controllers.Tests
         [Fact]
         public async Task RemoveMachineFromCart_ShouldRemoveMachineFromCart_WhenMachineExists()
         {
-            // Arrange
+            int testUserIdExists = 123;
             var machineForSale = AddMachineAsync();
 
             var request = new AddMachineToCartRequest { MachineId = machineForSale.Id };
-            await controller.AddMachineToCart(1, request);
+            var add = await controller.AddMachineToCart(testUserIdExists, request);
+            dbContext.SaveChanges();
 
-
-            var result = await controller.RemoveMachineFromCart(123, machineForSale.Id);
-
+            var result = await controller.RemoveMachineFromCart(testUserIdExists, machineForSale.Id);
+            await dbContext.SaveChangesAsync();
 
             var okResult = Assert.IsType<OkObjectResult>(result);
 
@@ -187,11 +187,11 @@ namespace LDS_2425.Controllers.Tests
             Assert.Equal("Machine deleted from cart.", jsonResult["message"].ToString());
 
             var shoppingCart = await dbContext.ShoppingCarts
-                .Include(sc => sc.Machines)
                 .FirstOrDefaultAsync(c => c.userId == 123);
             Assert.NotNull(shoppingCart);
             Assert.Empty(shoppingCart.Machines);
         }
+     
         private async Task<Models.Machine> AddMachineAsync()
         {
             var machine = new Models.Machine
