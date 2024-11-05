@@ -23,7 +23,9 @@ namespace LDS_2425.Controllers
         {
             //Verfica se existe contratos
             if (dbContext.Contracts == null)
+            {
                 return NotFound("No contracts found");
+            }
 
             //Retorna lista contratos
             return Ok(dbContext.Contracts.ToList());
@@ -34,16 +36,20 @@ namespace LDS_2425.Controllers
         [HttpGet("{id}")]
         public ActionResult<Models.Contract> GetContracts(int id)
         {
-            //Verfica se existe contratos
+            //Verfica se existe contratos{
             if (dbContext.Contracts == null)
+            {
                 return NotFound();
+            }
 
             //Procura o contrato
             var contract = dbContext.Contracts.SingleOrDefault(s => s.Id == id);
 
             //Erro se ñ houver contrato
             if (contract == null)
+            {
                 return NotFound($"Contract with ID {id} not found.");
+            }
 
             //Retorna contrato encontrado
             return Ok(contract);
@@ -97,11 +103,15 @@ namespace LDS_2425.Controllers
         [HttpPut("{id}")]
         public IActionResult Update(int id, Models.Contract contract)
         {
-            if (!contract.Id.Equals(id))
+            if (!contract.Id.Equals(id)) 
+            {
                 return BadRequest("Contract ID mismatch or null data.");
+            }
 
             if (!dbContext.Contracts.Any(c => c.Id == id))
+            {
                 return NotFound($"Contract with ID {id} not found.");
+            }
 
             dbContext.Contracts.Update(contract);
             dbContext.SaveChanges();
@@ -113,12 +123,16 @@ namespace LDS_2425.Controllers
         public IActionResult Delete(int id)
         {
             if (dbContext.Contracts == null)
+            {
                 return NotFound();
+            }
 
             var contract = dbContext.Contracts.SingleOrDefault(s => s.Id == id);
 
             if (contract == null)
+            {
                 return NotFound($"Contract with ID {id} not found");
+            }
 
             dbContext.Contracts.Remove(contract);
             dbContext.SaveChanges();
