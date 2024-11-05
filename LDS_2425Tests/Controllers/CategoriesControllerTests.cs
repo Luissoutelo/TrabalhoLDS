@@ -183,12 +183,8 @@ namespace LDS_2425Tests.Controllers
         [Fact]
         public async Task Delete_ShouldReturnOk_WhenTheCategoryExists()
         {
-            // Arrange
-            var category = new Category { Id = 2, Name = "Teste2" };
-            var addResult = controller.Add(category);
-
             //Act
-            var result = controller.Delete(2);
+            var result = controller.Delete(1);
 
             //Assert
             Assert.IsType<NoContentResult>(result);
