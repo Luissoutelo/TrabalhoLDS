@@ -48,14 +48,16 @@ namespace LDS_2425.Controllers
         // GET : api/users
         [Authorize(Roles = "Administrator")]
         [HttpGet]
-        public ActionResult<IEnumerable<User>> GetUsers()
+        public async Task<ActionResult<IEnumerable<User>>> GetUsers()
         {
             if (dbContext.Users == null)
             {
                 return NotFound();
             }
 
-            return Ok(dbContext.Users.ToList());
+            var usersList = await dbContext.Users.ToListAsync();
+
+            return Ok(usersList);
         }
 
         // GET : api/users{id}
@@ -121,6 +123,12 @@ namespace LDS_2425.Controllers
         [HttpPut("{id}")]
         public IActionResult Update(int id, User user)
         {
+            var existingUser = dbContext.Users.Find(id);
+            if (existingUser == null)
+            {
+                return NotFound(new { message = "User not found." });
+            }
+
             if (!user.Id.Equals(id))
             {
                 return BadRequest();
@@ -128,7 +136,7 @@ namespace LDS_2425.Controllers
 
             // Vê se email existe
             var emailUsed = dbContext.Users
-                .FirstOrDefault(u => u.Email == user.Email);
+                .FirstOrDefault(u => u.Email == user.Email && u.Id != id);
 
             if (emailUsed != null)
             {
@@ -137,7 +145,7 @@ namespace LDS_2425.Controllers
 
             // Vê se número de telemóvel existe
             var phoneNumberUsed = dbContext.Users
-                .FirstOrDefault(u => u.PhoneNumber == user.PhoneNumber);
+                .FirstOrDefault(u => u.PhoneNumber == user.PhoneNumber && u.Id != id);
 
             if (phoneNumberUsed != null)
             {

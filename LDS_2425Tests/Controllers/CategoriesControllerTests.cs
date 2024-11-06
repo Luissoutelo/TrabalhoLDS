@@ -197,7 +197,7 @@ namespace LDS_2425Tests.Controllers
         }
 
         [Fact]
-        public async Task Delete_ShouldReturnNotFoundObject_WhenTheCategoryIdIsInvalid()
+        public async Task Delete_ShouldReturnNotFoundObject_WhenTheCategoryIdDoesntExist()
         {
             //Act
             var result = controller.Delete(9999);
