@@ -16,14 +16,16 @@ namespace LDS_2425.Controllers
 
         // GET : api/categories
         [HttpGet]
-        public ActionResult<IEnumerable<Category>> GetCategory()
+        public async Task<ActionResult<IEnumerable<Category>>> GetCategory()
         {
             if (dbContext.Categories == null)
             {
                 return NotFound();
             }
 
-            return Ok(dbContext.Categories.ToList());
+            var categories = await dbContext.Categories.ToListAsync();
+
+            return Ok(categories);
         }
 
         // GET : api/categories{id}
@@ -50,7 +52,7 @@ namespace LDS_2425.Controllers
         public ActionResult<Category> Add(Category category)
         {
             // Vê se existe categoria com nome
-            var nameUsed = dbContext.Users
+            var nameUsed = dbContext.Categories
                 .FirstOrDefault(c => c.Name == category.Name);
 
             if (nameUsed != null)
@@ -67,13 +69,20 @@ namespace LDS_2425.Controllers
         [HttpPut("{id}")]
         public IActionResult Update(int id, Category category)
         {
+            var categoryExists = dbContext.Categories.Find(id);
+
+            if (categoryExists == null)
+            {
+                return NotFound(new { message = "Category not found." });
+            }
+
             if (!category.Id.Equals(id))
             {
                 return BadRequest();
             }
 
             // Vê se existe categoria com nome
-            var nameUsed = dbContext.Users
+            var nameUsed = dbContext.Categories
                 .FirstOrDefault(c => c.Name == category.Name);
 
             if (nameUsed != null)
@@ -109,28 +118,27 @@ namespace LDS_2425.Controllers
 
         // GET : api/categories{id}
         [HttpGet("{id}/machineCount")]
-        public ActionResult<int> GetMachineCountForCategory(int id)
+        public async Task<ActionResult<int>> GetMachineCountForCategory(int id)
         {
-            if (dbContext.Categories == null)
+            if (dbContext.Categories == null || !dbContext.Categories.Any(c => c.Id == id))
             {
                 return NotFound();
             }
 
-            var machines = dbContext.Machines.Count(m => m.CategoryId == id);
-
+            var machines = await dbContext.Machines.CountAsync(m => m.CategoryId == id);
             return Ok(machines);
         }
 
         // GET : api/categories{id}
         [HttpGet("{id}/loanListingCount")]
-        public ActionResult<int> GetLoanListingCountForCategory(int id)
+        public async Task<ActionResult<int>> GetLoanListingCountForCategory(int id)
         {
-            if (dbContext.Categories == null)
+            if (dbContext.Categories == null || !dbContext.Categories.Any(c => c.Id == id))
             {
                 return NotFound();
             }
 
-            var listings = dbContext.Loan_Listings.Count(l => l.CategoryId == id);
+            var listings = await dbContext.Loan_Listings.CountAsync(l => l.CategoryId == id);
 
             return Ok(listings);
         }

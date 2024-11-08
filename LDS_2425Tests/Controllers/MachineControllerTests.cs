@@ -24,7 +24,7 @@ namespace LDS_2425Tests.Controllers
         public MachineControllerTests()
         {
             var dbContext = new DbContextOptionsBuilder<MachineHubContext>()
-                .UseInMemoryDatabase("TestMachineDatabase")
+                .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString())
                 .Options;
 
             _dbContext = new MachineHubContext(dbContext, new PasswordHasher<User>());
@@ -103,7 +103,7 @@ namespace LDS_2425Tests.Controllers
         {
             var newMachine = new Machine
             {
-                Id = 2,
+                Id = 3,
                 Name = "NewMachine",
                 Brand = "NewBrand",
                 Model = "NewModel",
@@ -129,7 +129,7 @@ namespace LDS_2425Tests.Controllers
             var newMachinne = new Machine
             {
                 
-                Id = 3,
+                Id = 4,
                 Name = "InvalidMachine",
                 Brand = "NewBrand",
                 Model = "NewModel",
@@ -148,28 +148,26 @@ namespace LDS_2425Tests.Controllers
             Assert.Equal("Category with Id 9999 doesn't exist.", badRequestResult.Value);
         }
 
-        /*[Fact]
+        [Fact]
         public void UpdateMachine_ReturnsNoContent_WhenUpdateIsSuccessful()
         {
-            var updateMachine = new Machine
-            {
-                Id = 1,
-                Name = "UpdatedMachine",
-                Brand = "UpdatedBrand",
-                Model = "UpdatedModel",
-                Condition = "Like New",
-                Capacity = 1200,
-                Description = "Updated description",
-                Year_of_Manufacture = DateOnly.Parse("2012-12-12"),
-                Price = 13000,
-                Image = "",
-                CategoryId = 1
-            };
+            var existingMachine = _dbContext.Machines.Find(1);
 
-            var result = _machineController.Update(1, updateMachine);
+            existingMachine.Name = "UpdatedMachine";
+            existingMachine.Brand = "UpdatedBrand";
+            existingMachine.Model = "UpdatedModel";
+            existingMachine.Condition = "Like New";
+            existingMachine.Capacity = 1200;
+            existingMachine.Description = "Updated description";
+            existingMachine.Year_of_Manufacture = DateOnly.Parse("2012-12-12");
+            existingMachine.Price = 13000;
+            existingMachine.Image = "";
+            existingMachine.CategoryId = 1;
+
+            var result = _machineController.Update(existingMachine.Id, existingMachine);
 
             Assert.IsType<NoContentResult>(result);
-        }*/
+        }
 
         [Fact]
         public void UpdateMachine_ReturnsBadRequest_WhenIdsDoNotMatch()

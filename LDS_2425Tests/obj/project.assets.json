@@ -8932,24 +8932,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\carlo\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\vasco\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\carlo\\Documents\\estg\\lds\\LDS_Grupo16\\TrabalhoLDS\\LDS_2425Tests\\LDS_2425Tests.csproj",
+      "projectUniqueName": "C:\\Users\\vasco\\Documents\\GitHub\\TrabalhoLDS\\LDS_2425Tests\\LDS_2425Tests.csproj",
       "projectName": "LDS_2425Tests",
-      "projectPath": "C:\\Users\\carlo\\Documents\\estg\\lds\\LDS_Grupo16\\TrabalhoLDS\\LDS_2425Tests\\LDS_2425Tests.csproj",
-      "packagesPath": "C:\\Users\\carlo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\carlo\\Documents\\estg\\lds\\LDS_Grupo16\\TrabalhoLDS\\LDS_2425Tests\\obj\\",
+      "projectPath": "C:\\Users\\vasco\\Documents\\GitHub\\TrabalhoLDS\\LDS_2425Tests\\LDS_2425Tests.csproj",
+      "packagesPath": "C:\\Users\\vasco\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\vasco\\Documents\\GitHub\\TrabalhoLDS\\LDS_2425Tests\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\carlo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\vasco\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8964,8 +8959,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\carlo\\Documents\\estg\\lds\\LDS_Grupo16\\TrabalhoLDS\\LDS_2425\\LDS_2425.csproj": {
-              "projectPath": "C:\\Users\\carlo\\Documents\\estg\\lds\\LDS_Grupo16\\TrabalhoLDS\\LDS_2425\\LDS_2425.csproj"
+            "C:\\Users\\vasco\\Documents\\GitHub\\TrabalhoLDS\\LDS_2425\\LDS_2425.csproj": {
+              "projectPath": "C:\\Users\\vasco\\Documents\\GitHub\\TrabalhoLDS\\LDS_2425\\LDS_2425.csproj"
             }
           }
         }
@@ -9042,7 +9037,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
       }
     }
   },
@@ -9051,7 +9046,7 @@
       "code": "NU1608",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Versão detectada do pacote fora da restrição de dependência: xunit.core 2.4.1 requer xunit.extensibility.core (= 2.4.1), mas a versão xunit.extensibility.core 2.9.2 foi resolvida.",
+      "message": "Detected package version outside of dependency constraint: xunit.core 2.4.1 requires xunit.extensibility.core (= 2.4.1) but version xunit.extensibility.core 2.9.2 was resolved.",
       "libraryId": "xunit.extensibility.core",
       "targetGraphs": [
         "net8.0"
@@ -9061,7 +9056,7 @@
       "code": "NU1608",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Versão detectada do pacote fora da restrição de dependência: xunit.extensibility.execution 2.4.1 requer xunit.extensibility.core (= 2.4.1), mas a versão xunit.extensibility.core 2.9.2 foi resolvida.",
+      "message": "Detected package version outside of dependency constraint: xunit.extensibility.execution 2.4.1 requires xunit.extensibility.core (= 2.4.1) but version xunit.extensibility.core 2.9.2 was resolved.",
       "libraryId": "xunit.extensibility.core",
       "targetGraphs": [
         "net8.0"

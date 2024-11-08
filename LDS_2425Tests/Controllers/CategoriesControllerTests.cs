@@ -1,6 +1,7 @@
 ﻿using LDS_2425.Controllers;
 using LDS_2425.Data;
 using LDS_2425.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -24,7 +25,7 @@ namespace LDS_2425Tests.Controllers
         {
 
             var options = new DbContextOptionsBuilder<MachineHubContext>()
-                .UseInMemoryDatabase("TestDatabase")
+                .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString())
                 .Options;
 
             dbContext = new MachineHubContext(options, new PasswordHasher<User>());
@@ -48,17 +49,16 @@ namespace LDS_2425Tests.Controllers
         }
 
         [Fact]
-        public async Task GetCategory_ShouldReturnOk_WhenThereisCategories()
+        public async Task GetCategory_ShouldReturnOk_WhenThereAreCategories()
         {
             // Act
-            var result = controller.GetCategory();
+            var result = await controller.GetCategory();
 
             // Assert
             var okResult = Assert.IsType<OkObjectResult>(result.Result);
-            Assert.Equal(200, okResult.StatusCode);
+            var jsonArray = JArray.FromObject(okResult.Value);
 
-            var jsonResult = JObject.FromObject(okResult.Value);
-            Assert.NotNull(jsonResult);
+            Assert.NotEmpty(jsonArray);
         }
 
         [Fact]
@@ -88,7 +88,7 @@ namespace LDS_2425Tests.Controllers
             var result = controller.GetCategory(id);
 
             // Assert
-            Xunit.Assert.IsType<NotFoundObjectResult>(result.Result);
+            Assert.IsType<NotFoundResult>(result.Result);
         }
 
         [Fact]
@@ -101,11 +101,7 @@ namespace LDS_2425Tests.Controllers
             var result = controller.Add(category);
 
             // Assert
-            var okResult = Assert.IsType<OkObjectResult>(result.Result);
-            Assert.Equal(200, okResult.StatusCode);
-
-            var jsonResult = JObject.FromObject(okResult.Value);
-            Assert.NotNull(jsonResult);
+            Assert.IsType<CreatedAtActionResult>(result.Result);
         }
 
         [Fact]
@@ -118,7 +114,7 @@ namespace LDS_2425Tests.Controllers
             var result = controller.Add(category);
 
             // Assert
-            Xunit.Assert.IsType<ConflictObjectResult>(result.Result);
+            Assert.IsType<ConflictObjectResult>(result.Result);
         }
 
         [Fact]
@@ -132,7 +128,7 @@ namespace LDS_2425Tests.Controllers
             var result = controller.Update(id, category);
 
             // Assert
-            Assert.IsType<BadRequestObjectResult>(result);
+            Assert.IsType<BadRequestResult>(result);
         }
 
         [Fact]
@@ -146,89 +142,102 @@ namespace LDS_2425Tests.Controllers
             var result = controller.Update(id, category);
 
             // Assert
-            Xunit.Assert.IsType<NotFoundObjectResult>(result);
+            Assert.IsType<NotFoundObjectResult>(result);
         }
 
         [Fact]
-        public async Task Update_ShouldReturnOk_WhenTheIdAndCategoryIsValid()
+        public async Task Update_ReturnsNoContent_WhenTheIdAndCategoryIsValid()
         {
             //Arrange
             var id = 1;
-            var category = new Category { Id = 1, Name = "Teste2" };
+            var existingCategory = dbContext.Categories.Find(id);
 
             // Act
-            var result = controller.Update(id, category);
+            existingCategory.Name = "Teste2";
+
+            var result = controller.Update(existingCategory.Id, existingCategory);
 
             // Assert
-            var okResult = Assert.IsType<OkObjectResult>(result.ToString);
-            Assert.Equal(200, okResult.StatusCode);
-
-            var jsonResult = JObject.FromObject(okResult.Value);
-            Assert.NotNull(jsonResult);
+            Assert.IsType<NoContentResult>(result);
         }
 
         [Fact]
-        public async Task Update_ShouldReturnConflictObject_WhenThereisCategoryWithSameName()
+        public async Task Update_ShouldReturnConflictObjectResult_WhenThereisCategoryWithSameName()
         {
             //Arrange
-            var category = new Category { Id = 1, Name = "Teste" };
+            var id = 1;
+            var existingCategory = dbContext.Categories.Find(id);
+            var newCategory = new Category { Id = 2, Name = "Teste2" };
 
             // Act
-            var result = controller.Update(1, category);
+            controller.Add(newCategory);
+
+            existingCategory.Name = "Teste2";
+
+            var result = controller.Update(existingCategory.Id, existingCategory);
 
             // Assert
-            Assert.IsType<ConflictObjectResult>(result.ToString);
+            Assert.IsType<ConflictObjectResult>(result);
         }
 
         [Fact]
         public async Task Delete_ShouldReturnOk_WhenTheCategoryExists()
         {
-            // Arrange
-            var category = new Category { Id = 2, Name = "Teste2" };
-            var addResult = controller.Add(category);
+            //Arrange
+            var id = 2;
+            var existingCategory = new Category { Id = id, Name = "Teste2" };
+            dbContext.Add(existingCategory);
+            dbContext.SaveChanges();
 
             //Act
             var result = controller.Delete(2);
 
             //Assert
-            var okResult = Assert.IsType<OkObjectResult>(result);
-
-            var jsonResult = JObject.FromObject(okResult.Value);
-            Assert.Equal("Category deleted.", jsonResult["message"].ToString());
+            Assert.IsType<NoContentResult>(result);
         }
 
         [Fact]
-        public async Task Delete_ShouldReturnNotFoundObject_WhenTheCategoryIdIsInvalid()
+        public async Task Delete_ShouldReturnNotFoundObject_WhenTheCategoryIdDoesntExist()
         {
             //Act
-            var result = controller.Delete(2);
+            var result = controller.Delete(9999);
 
             //Assert
-            Assert.IsType<NotFoundObjectResult>(result);
+            Assert.IsType<NotFoundResult>(result);
         }
 
         [Fact]
         public async Task GetMachineCountForCategory_ShouldReturnOk_WhenCategoryExists()
         {
+            //Arrange
+            var id = 2;
+            var existingCategory = new Category { Id = id, Name = "Teste2" };
+            dbContext.Add(existingCategory);
+            dbContext.SaveChanges();
 
-            //Act
-            var result = controller.GetMachineCountForCategory(1);
+            // Act
+            var result = await controller.GetMachineCountForCategory(id);
 
-            //Assert
-            var okResult = Assert.IsType<OkObjectResult>(result);
+            // Assert
+            Assert.IsType<ActionResult<int>>(result);
 
-            var jsonResult = JObject.FromObject(okResult.Value);
-            Assert.Equal("Category found.", jsonResult["message"].ToString());
+            var okResult = result.Result as OkObjectResult;
+
+            var machineCount = (int)okResult!.Value!;
+
+            Assert.True(machineCount >= 0);
         }
 
-        [Fact]
-        public async Task GetMachineCountForCategory_ShouldReturnNotFoundObject_WhenTheCategoryIdIsInvalid()
-        {
-            //Act
-            var result = controller.GetMachineCountForCategory(2);
 
-            //Assert
-            Assert.IsType<NotFoundObjectResult>(result);
+
+        [Fact]
+        public async Task GetMachineCountForCategory_ShouldReturnNotFound_WhenTheCategoryIdIsInvalid()
+        {
+            // Act
+            var result = await controller.GetMachineCountForCategory(2);
+
+            // Assert
+            Assert.IsType<NotFoundResult>(result.Result);
         }
 
         [Fact]
@@ -236,23 +245,27 @@ namespace LDS_2425Tests.Controllers
         {
 
             //Act
-            var result = controller.GetLoanListingCountForCategory(1);
+            var result = await controller.GetLoanListingCountForCategory(1);
 
             //Assert
-            var okResult = Assert.IsType<OkObjectResult>(result);
+            Assert.IsType<ActionResult<int>>(result);
 
-            var jsonResult = JObject.FromObject(okResult.Value);
-            Assert.Equal("Category found.", jsonResult["message"].ToString());
+            var okResult = result.Result as OkObjectResult;
+
+            Assert.NotNull(okResult);
+            var listingCount = (int)okResult!.Value!;
+
+            Assert.True(listingCount >= 0);
         }
 
         [Fact]
-        public async Task GetLoanListingCountForCategory_ShouldReturnNotFoundObject_WhenTheCategoryIdIsInvalid()
+        public async Task GetListingCountForCategory_ShouldReturnNotFound_WhenTheCategoryIdIsInvalid()
         {
-            //Act
-            var result = controller.GetLoanListingCountForCategory(2);
+            // Act
+            var result = await controller.GetLoanListingCountForCategory(2);
 
-            //Assert
-            Assert.IsType<NotFoundObjectResult>(result);
+            // Assert
+            Assert.IsType<NotFoundResult>(result.Result);
         }
     }
 }
