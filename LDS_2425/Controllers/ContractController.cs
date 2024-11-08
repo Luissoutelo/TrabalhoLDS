@@ -96,49 +96,7 @@ namespace LDS_2425.Controllers
 
             return CreatedAtAction(nameof(Add), new { id = contract.Id }, contract);
         }
-
-
-
-        //Put: api/contracts/{id}
-        [HttpPut("{id}")]
-        public IActionResult Update(int id, Models.Contract contract)
-        {
-            if (!contract.Id.Equals(id)) 
-            {
-                return BadRequest("Contract ID mismatch or null data.");
-            }
-
-            if (!dbContext.Contracts.Any(c => c.Id == id))
-            {
-                return NotFound($"Contract with ID {id} not found.");
-            }
-
-            dbContext.Contracts.Update(contract);
-            dbContext.SaveChanges();
-            return NoContent();
-        }
-
-        //Delete: api/students/{id}
-        [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
-        {
-            if (dbContext.Contracts == null)
-            {
-                return NotFound();
-            }
-
-            var contract = dbContext.Contracts.SingleOrDefault(s => s.Id == id);
-
-            if (contract == null)
-            {
-                return NotFound($"Contract with ID {id} not found");
-            }
-
-            dbContext.Contracts.Remove(contract);
-            dbContext.SaveChanges();
-            return NoContent();
-        }
-    }
+   }
 }
 
 
