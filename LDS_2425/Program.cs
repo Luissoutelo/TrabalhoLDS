@@ -37,6 +37,14 @@ builder.Services.AddCors(options =>
               .AllowAnyMethod()
               .AllowCredentials();
     });
+
+    options.AddPolicy("AllowPostman", policy =>
+    {
+        policy.WithOrigins("https:https://machinehub.postman.co/")
+              .AllowAnyHeader()
+              .AllowAnyMethod()
+              .AllowCredentials();
+    });
 });
 
 builder.Services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
@@ -109,6 +117,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseCors("AllowAllOrigins");
 app.UseCors("AllowLocalhost");
+app.UseCors("AllowPostman");
 
 app.UseAuthentication();
 app.UseAuthorization();

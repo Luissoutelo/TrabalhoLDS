@@ -69,13 +69,6 @@ namespace LDS_2425.Controllers
         [HttpPut("{id}")]
         public IActionResult Update(int id, Category category)
         {
-            var categoryExists = dbContext.Categories.Find(id);
-
-            if (categoryExists == null)
-            {
-                return NotFound(new { message = "Category not found." });
-            }
-
             if (!category.Id.Equals(id))
             {
                 return BadRequest();

@@ -123,12 +123,6 @@ namespace LDS_2425.Controllers
         [HttpPut("{id}")]
         public IActionResult Update(int id, User user)
         {
-            var existingUser = dbContext.Users.Find(id);
-            if (existingUser == null)
-            {
-                return NotFound(new { message = "User not found." });
-            }
-
             if (!user.Id.Equals(id))
             {
                 return BadRequest();
