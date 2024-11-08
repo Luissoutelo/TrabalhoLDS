@@ -1,11 +1,19 @@
 {
   "Version": 1,
-  "Hash": "vRnXMojC2Ck3fojSHtkP3vMnEB/lGaVyaIVS1Oc/atg=",
+  "Hash": "xG1+Cf+qkNA0hiDg1x8FxzGuBjMb8kkF08q5EnC4jp8=",
   "Source": "LDS_2425",
   "BasePath": "_content/LDS_2425",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "LDS_2425\\wwwroot",
+      "Source": "LDS_2425",
+      "ContentRoot": "C:\\Users\\vasco\\Documents\\GitHub\\TrabalhoLDS\\LDS_2425\\wwwroot\\",
+      "BasePath": "_content/LDS_2425",
+      "Pattern": "**"
+    }
+  ],
   "Assets": []
 }
